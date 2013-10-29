@@ -750,3 +750,10 @@ build.dart --machine --changed=web/index.html
 [{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"person-list\" not found.","line":17,"charStart":565,"charEnd":578}}]
 build.dart finished [895 ms]
 
+---
+build.dart --machine --changed=pubspec.lock --changed=pubspec.yaml --changed=web/app.dart --changed=web/app.htm...
+Unable to open file: /Users/marcel/dart/mytraining/packages/polymer/builder.dart'file:///Users/marcel/dart/mytraining/build.dart': Error: line 6 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [113 ms]
+
