@@ -1,0 +1,32 @@
+<!--
+Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
+for details. All rights reserved. Use of this source code is governed by a
+BSD-style license that can be found in the LICENSE file.
+-->
+
+<polymer-element name="training-app">
+<template>
+  <section id="todoapp">
+    <section id="main">
+    </section>
+    <template if="{{app.todos.length > 0}}">
+      <footer id="footer">
+        <span id="todo-count"><strong>{{app.remaining}}</strong></span>
+        <ul is="router-options" id="filters">
+          <li> <a href="#/">All</a> </li>
+          <li> <a href="#/active">Active</a> </li>
+          <li> <a href="#/completed">Completed</a> </li>
+        </ul>
+        <template if="{{app.hasCompleteTodos}}">
+          <button id="clear-completed" on-click="{{clear}}">
+            Clear completed ({{app.doneCount}})
+          </button>
+        </template>
+      </footer>
+    </template>
+  </section>
+  <footer id="info">
+  </footer>
+</template>
+<script type="application/dart" src="app.dart"></script>
+</polymer-element>

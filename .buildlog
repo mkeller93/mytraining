@@ -1,0 +1,10 @@
+---
+build.dart --machine --full
+Unable to open file: /home/keller/dart/mytraining/packages/args/args.dart'package:polymer/builder.dart': Error: line 85 pos 1: library handler failed
+import 'package:args/args.dart';
+^
+'file:///home/keller/dart/mytraining/build.dart': Error: line 6 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [66 ms]
+
