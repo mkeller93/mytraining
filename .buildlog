@@ -8,3 +8,745 @@ import 'package:polymer/builder.dart';
 ^
 build.dart finished [66 ms]
 
+---
+build.dart --machine --changed=web/index.html
+Unable to open file: /home/keller/dart/mytraining/packages/args/args.dart'package:polymer/builder.dart': Error: line 85 pos 1: library handler failed
+import 'package:args/args.dart';
+^
+'file:///home/keller/dart/mytraining/build.dart': Error: line 6 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [65 ms]
+
+---
+build.dart --machine --changed=web/index.html
+Unable to open file: /home/keller/dart/mytraining/packages/unmodifiable_collection/unmodifiable_collection.dart'package:args/args.dart': Error: line 264 pos 1: library handler failed
+import 'package:unmodifiable_collection/unmodifiable_collection.dart';
+^
+'package:polymer/builder.dart': Error: line 85 pos 1: library handler failed
+import 'package:args/args.dart';
+^
+'file:///home/keller/dart/mytraining/build.dart': Error: line 6 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [39 ms]
+
+---
+build.dart --machine --changed=web/index.html
+Unable to open file: /home/keller/dart/mytraining/packages/unmodifiable_collection/unmodifiable_collection.dart'package:args/args.dart': Error: line 264 pos 1: library handler failed
+import 'package:unmodifiable_collection/unmodifiable_collection.dart';
+^
+'package:polymer/builder.dart': Error: line 85 pos 1: library handler failed
+import 'package:args/args.dart';
+^
+'file:///home/keller/dart/mytraining/build.dart': Error: line 6 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [38 ms]
+
+---
+build.dart --machine --changed=web/index.html
+Unable to open file: /home/keller/dart/mytraining/packages/barback/barback.dart'package:polymer/src/build/linter.dart': Error: line 16 pos 1: library handler failed
+import 'package:barback/barback.dart';
+^
+'package:polymer/builder.dart': Error: line 87 pos 1: library handler failed
+import 'src/build/linter.dart';
+^
+'file:///home/keller/dart/mytraining/build.dart': Error: line 6 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [76 ms]
+
+---
+build.dart --machine --changed=web/index.html
+Unable to open file: /home/keller/dart/mytraining/packages/barback/barback.dart'package:polymer/src/build/linter.dart': Error: line 16 pos 1: library handler failed
+import 'package:barback/barback.dart';
+^
+'package:polymer/builder.dart': Error: line 87 pos 1: library handler failed
+import 'src/build/linter.dart';
+^
+'file:///home/keller/dart/mytraining/build.dart': Error: line 6 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [43 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":15,"charStart":482,"charEnd":519}}]
+build.dart finished [814 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":15,"charStart":482,"charEnd":519}}]
+build.dart finished [687 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":15,"charStart":482,"charEnd":519}}]
+build.dart finished [630 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":15,"charStart":482,"charEnd":519}}]
+build.dart finished [640 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":15,"charStart":482,"charEnd":519}}]
+build.dart finished [613 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":15,"charStart":482,"charEnd":519}}]
+build.dart finished [588 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+Unable to open file: /home/keller/dart/mytraining/packages/polymer/builder.dart'file:///home/keller/dart/mytraining/build.dart': Error: line 6 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [93 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+Unable to open file: /home/keller/dart/mytraining/packages/polymer/builder.dart'file:///home/keller/dart/mytraining/build.dart': Error: line 6 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [40 ms]
+
+---
+build.dart --machine --changed=web/view/add_person.dart
+Unable to open file: /home/keller/dart/mytraining/packages/polymer/builder.dart'file:///home/keller/dart/mytraining/build.dart': Error: line 6 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [55 ms]
+
+---
+build.dart --machine --removed=web/mytraining.css --removed=web/mytraining.dart --removed=web/mytraining.html
+Unable to open file: /home/keller/dart/mytraining/packages/polymer/builder.dart'file:///home/keller/dart/mytraining/build.dart': Error: line 6 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [64 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":15,"charStart":482,"charEnd":519}}]
+build.dart finished [1376 ms]
+
+---
+build.dart --machine --changed=web/view/add_person.html
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":15,"charStart":482,"charEnd":519}}]
+build.dart finished [742 ms]
+
+---
+build.dart --machine --changed=web/add_person.dart --changed=web/add_person.html --removed=web/view/add_person....
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":15,"charStart":482,"charEnd":519}}]
+build.dart finished [647 ms]
+
+---
+build.dart --machine --changed=web/main.dart --removed=web/app.dart
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":15,"charStart":482,"charEnd":519}}]
+build.dart finished [764 ms]
+
+---
+build.dart --machine --removed=web/app.html --removed=web/main.dart
+[{"method":"error","params":{"file":"web/index.html","message":"couldn't find imported asset \"web/app.html\" in package \"MyTraining\".","line":11,"charStart":348,"charEnd":383}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":17,"charStart":572,"charEnd":586}}]
+build.dart finished [649 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/index.html","message":"couldn't find imported asset \"web/main.html\" in package \"MyTraining\".","line":11,"charStart":348,"charEnd":384}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"main-view\" not found.","line":17,"charStart":573,"charEnd":584}}]
+build.dart finished [592 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":395,"charEnd":401}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications in Dartium, make sure to include'<script src=\"packages/browser/dart.js\"></script>' in your page","line":13,"charStart":395,"charEnd":401}}]
+build.dart finished [596 ms]
+
+---
+build.dart --machine --changed=web/index.dart
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":395,"charEnd":401}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications in Dartium, make sure to include'<script src=\"packages/browser/dart.js\"></script>' in your page","line":13,"charStart":395,"charEnd":401}}]
+build.dart finished [674 ms]
+
+---
+build.dart --machine --changed=web/add_person.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":395,"charEnd":401}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications in Dartium, make sure to include'<script src=\"packages/browser/dart.js\"></script>' in your page","line":13,"charStart":395,"charEnd":401}}]
+build.dart finished [575 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [577 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [594 ms]
+
+---
+build.dart --machine --removed=web/index.dart
+
+build.dart finished [805 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":395,"charEnd":401}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications in Dartium, make sure to include'<script src=\"packages/browser/dart.js\"></script>' in your page","line":13,"charStart":395,"charEnd":401}}]
+build.dart finished [605 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":395,"charEnd":401}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications in Dartium, make sure to include'<script src=\"packages/browser/dart.js\"></script>' in your page","line":13,"charStart":395,"charEnd":401}}]
+build.dart finished [599 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":395,"charEnd":401}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications in Dartium, make sure to include'<script src=\"packages/browser/dart.js\"></script>' in your page","line":13,"charStart":395,"charEnd":401}}]
+build.dart finished [579 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":395,"charEnd":401}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications in Dartium, make sure to include'<script src=\"packages/browser/dart.js\"></script>' in your page","line":13,"charStart":395,"charEnd":401}}]
+build.dart finished [569 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":395,"charEnd":401}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications in Dartium, make sure to include'<script src=\"packages/browser/dart.js\"></script>' in your page","line":13,"charStart":395,"charEnd":401}}]
+build.dart finished [594 ms]
+
+---
+build.dart --machine --changed=web/add_person.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":395,"charEnd":401}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications in Dartium, make sure to include'<script src=\"packages/browser/dart.js\"></script>' in your page","line":13,"charStart":395,"charEnd":401}}]
+build.dart finished [571 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":11,"charStart":305,"charEnd":311}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications in Dartium, make sure to include'<script src=\"packages/browser/dart.js\"></script>' in your page","line":11,"charStart":305,"charEnd":311}}]
+build.dart finished [607 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [598 ms]
+
+---
+build.dart --machine --changed=web/app.dart --changed=web/app.html
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [613 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [605 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [637 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [679 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [612 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [585 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [617 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [588 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [604 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [605 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [644 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [606 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [686 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [735 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [616 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [611 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [643 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [651 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [605 ms]
+
+---
+build.dart --machine --changed=web/persons.html --removed=web/add_person.html
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [629 ms]
+
+---
+build.dart --machine --changed=web/persons.dart --removed=web/add_person.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [643 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [621 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [635 ms]
+
+---
+build.dart --machine --changed=web/persons.dart
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/router_options.html\" in package \"MyTraining\".","line":6,"charStart":216,"charEnd":262}}]
+[{"method":"error","params":{"file":"web/app.html","message":"couldn't find imported asset \"web/todo_row.html\" in package \"MyTraining\".","line":7,"charStart":263,"charEnd":303}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":23,"charStart":838,"charEnd":868}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":30,"charStart":1073,"charEnd":1110}}]
+build.dart finished [628 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":22,"charStart":790,"charEnd":820}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":29,"charStart":1025,"charEnd":1062}}]
+build.dart finished [603 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":22,"charStart":794,"charEnd":824}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":29,"charStart":1029,"charEnd":1066}}]
+build.dart finished [604 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":22,"charStart":803,"charEnd":833}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":29,"charStart":1038,"charEnd":1075}}]
+build.dart finished [628 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":18,"charStart":642,"charEnd":672}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":25,"charStart":877,"charEnd":914}}]
+build.dart finished [611 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":19,"charStart":680,"charEnd":710}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":26,"charStart":915,"charEnd":952}}]
+build.dart finished [614 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"warning","params":{"file":"web/persons.html","message":"Expected closing tag. Unexpected end of file.","line":1,"charStart":0,"charEnd":37}}]
+[{"method":"warning","params":{"file":"web/persons.html","message":"duplicate definition for custom tag \"training-app\".","line":1,"charStart":0,"charEnd":37}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"duplicate definition for custom tag \"training-app\"  (second definition).","line":7,"charStart":256,"charEnd":293}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":19,"charStart":680,"charEnd":710}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":26,"charStart":915,"charEnd":952}}]
+[{"method":"warning","params":{"file":"web/persons.html","message":"Expected closing tag. Unexpected end of file.","line":1,"charStart":0,"charEnd":37}}]
+build.dart finished [611 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"warning","params":{"file":"web/persons.html","message":"Expected closing tag. Unexpected end of file.","line":1,"charStart":0,"charEnd":32}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":19,"charStart":680,"charEnd":710}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":26,"charStart":915,"charEnd":952}}]
+[{"method":"warning","params":{"file":"web/persons.html","message":"Expected closing tag. Unexpected end of file.","line":1,"charStart":0,"charEnd":32}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [607 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":19,"charStart":680,"charEnd":710}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":26,"charStart":915,"charEnd":952}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [603 ms]
+
+---
+build.dart --machine --changed=web/persons.dart
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":19,"charStart":680,"charEnd":710}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":26,"charStart":915,"charEnd":952}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [625 ms]
+
+---
+build.dart --machine --changed=web/persons.dart
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":19,"charStart":680,"charEnd":710}}]
+[{"method":"warning","params":{"file":"web/app.html","message":"definition for Polymer element with tag name \"router-options\" not found.","line":26,"charStart":915,"charEnd":952}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [601 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [609 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [599 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [591 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [593 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+[{"method":"warning","params":{"file":"web/persons.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":8,"charStart":255,"charEnd":285}}]
+build.dart finished [573 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+[{"method":"warning","params":{"file":"web/persons.html","message":"definition for Polymer element with tag name \"todo-row\" not found.","line":8,"charStart":250,"charEnd":280}}]
+build.dart finished [606 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [609 ms]
+
+---
+build.dart --machine --changed=web/persons.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [599 ms]
+
+---
+build.dart --machine --changed=web/persons.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [636 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [595 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [594 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [602 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [622 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [602 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [610 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [602 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [707 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [631 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"training-app\" not found.","line":14,"charStart":444,"charEnd":458}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [614 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [608 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [824 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [657 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"\"boot.js\" is now deprecated. Instead, you can initialize your polymer application by calling \"initPolymer()\" in your main. If you don't have a main, then you can include our generic main by adding the following script tag to your page: '<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>'. Additionally you need to include: '<script src=\"packages/browser/dart.js\"></script>' in the page too. Make sure these script tags come after all HTML imports.","line":11,"charStart":375,"charEnd":414}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications in Dartium, make sure to include'<script src=\"packages/browser/dart.js\"></script>' in your page","line":14,"charStart":473,"charEnd":479}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [726 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [584 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":14,"charStart":397,"charEnd":403}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [583 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":14,"charStart":397,"charEnd":403}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [1180 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":396,"charEnd":402}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [759 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":396,"charEnd":402}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [745 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":396,"charEnd":402}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [720 ms]
+
+---
+build.dart --machine --changed=web/app.dart
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":396,"charEnd":402}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [696 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":396,"charEnd":402}}]
+[{"method":"error","params":{"file":"web/persons.html","message":"Invalid name \"persons\". Custom element names must have at least one dash and can't be any of the following names: annotation-xml, color-profile, font-face, font-face-src, font-face-uri, font-face-format, font-face-name, missing-glyph.","line":1,"charStart":0,"charEnd":32}}]
+build.dart finished [707 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":396,"charEnd":402}}]
+build.dart finished [699 ms]
+
+---
+build.dart --machine --changed=web/persons.dart
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":396,"charEnd":402}}]
+build.dart finished [804 ms]
+
+---
+build.dart --machine --changed=web/persons.dart
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">import \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":13,"charStart":396,"charEnd":402}}]
+build.dart finished [717 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [732 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Move HTML imports above your Dart script tag.","line":12,"charStart":391,"charEnd":426}}]
+build.dart finished [710 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Move HTML imports above your Dart script tag.","line":12,"charStart":391,"charEnd":426}}]
+build.dart finished [700 ms]
+
+---
+build.dart --machine --changed=web/app.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Move HTML imports above your Dart script tag.","line":12,"charStart":391,"charEnd":426}}]
+build.dart finished [741 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Move HTML imports above your Dart script tag.","line":12,"charStart":391,"charEnd":426}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"person-list\" not found.","line":17,"charStart":503,"charEnd":516}}]
+build.dart finished [709 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Move HTML imports above your Dart script tag.","line":12,"charStart":391,"charEnd":430}}]
+build.dart finished [1310 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [741 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+
+build.dart finished [691 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [1183 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"person-list\" not found.","line":17,"charStart":565,"charEnd":578}}]
+build.dart finished [895 ms]
+
