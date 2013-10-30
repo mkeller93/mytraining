@@ -6,16 +6,30 @@ BSD-style license that can be found in the LICENSE file.
 <polymer-element name="list-persons-control">
 <template>
   <div id="main-content">
-    <ul>
+    <table>
+      <tr>
+        <td>Name</td>
+        <td>Birthday</td>
+        <td>Phone Number</td>
+        <td>Email</td>
+        <td>Trainer</td>
+        <td>Action</td>
+      </tr>
       <template repeat="{{person in app.persons}}">
-        <li>
-        {{person.firstname}} {{person.name}} {{person.birthday}}
-        <template if={{person.isTrainer}}>
-         Trainer
-        </template>
-        </li>
+        <tr>
+          <td>{{person.firstname}} {{person.name}}</td>
+          <td>{{person.birthday}}</td>
+          <td>{{person.phoneNumber}}</td>
+          <td>{{person.email}}</td>
+          <td>
+            <template if={{person.isTrainer}}>
+              x
+            </template>
+          </td>
+          <td><button on-click="{{deletePerson}}" person-id="{{person.id}}">Delete</button></td>
+        </tr>
       </template>
-    </ul>
+    </table>
   </div>
 </template>
 <script type="application/dart" src="list_persons.dart"></script>

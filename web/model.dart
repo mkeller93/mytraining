@@ -36,6 +36,9 @@ class AppModel extends Observable
 
 class Person extends Observable
 {
+  static int all_id = 0;
+  
+  @observable int id;
   @observable String name;
   @observable String firstname;
   @observable String birthday;
@@ -43,7 +46,10 @@ class Person extends Observable
   @observable String email;
   @observable bool isTrainer;
     
-  Person();
+  Person()
+  {
+    id = Person.all_id++;
+  }
   
   String toString() => "$firstname $name ${isTrainer ? ' (trainer)' : ''}";
 }

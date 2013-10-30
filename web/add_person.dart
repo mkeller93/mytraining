@@ -17,11 +17,13 @@ class AddPersonControl extends PolymerElement
   @observable bool isTrainer;
   
   @observable ObservableList<String> errors;
+  @observable String success;
   
   AddPersonControl.created() : super.created() 
   {
     app = appModel;
     errors = new ObservableList<String>();
+    success = "";
   }
   
   void submit(Event e)
@@ -41,6 +43,7 @@ class AddPersonControl extends PolymerElement
       app.persons.add(p);
       
       clearValues();
+      success = "Successfully added the Person";
     }
   }
   

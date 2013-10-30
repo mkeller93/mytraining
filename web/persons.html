@@ -7,11 +7,19 @@ BSD-style license that can be found in the LICENSE file.
 <link rel="import" href="list_persons.html">
 <polymer-element name="person-view">
 <template>
+  <div>
+    <button on-click="{{updateView}}" view="list">List</button>
+    <button on-click="{{updateView}}" view="add">Add</button>    
+  </div>
   <div id="main-content">
-    <h1>Persons</h1>
-    <list-persons-control></list-persons-control>
-    <h2>Add new</h2>
-    <add-person-control></add-person-control>
+    <template if="{{action == 'list'}}">
+      <h1>Persons</h1>
+      <list-persons-control></list-persons-control>
+    </template>
+    <template if="{{action == 'add'}}">
+      <h2>Add new</h2>
+      <add-person-control></add-person-control>
+    </template>
   </div>
 </template>
 <script type="application/dart" src="persons.dart"></script>

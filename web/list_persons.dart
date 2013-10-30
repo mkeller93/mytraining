@@ -13,4 +13,11 @@ class ListPersonsControl extends PolymerElement
   {
     app = appModel;
   }
+  
+  void deletePerson(Event event, var detail, var target)
+  {
+    var id = int.parse(target.attributes["person-id"]);
+    var person = app.persons.where((p) => p.id == id).first;
+    app.persons.remove(person);
+  }
 }
