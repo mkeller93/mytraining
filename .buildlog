@@ -757,3 +757,243 @@ import 'package:polymer/builder.dart';
 ^
 build.dart finished [113 ms]
 
+---
+build.dart --machine --changed=LICENSE --changed=README.md --changed=pubspec.lock --changed=pubspec.yaml --chan...
+
+build.dart finished [1838 ms]
+
+---
+build.dart --machine --changed=web/add_person.dart --changed=web/add_person.html
+
+build.dart finished [873 ms]
+
+---
+build.dart --machine --changed=web/model.dart
+
+build.dart finished [938 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+
+build.dart finished [818 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+
+build.dart finished [864 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+
+build.dart finished [835 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [1108 ms]
+
+---
+build.dart --machine --changed=web/add_person.dart
+
+build.dart finished [928 ms]
+
+---
+build.dart --machine --changed=web/add_person.dart
+
+build.dart finished [853 ms]
+
+---
+build.dart --machine --changed=web/add_person.dart
+
+build.dart finished [918 ms]
+
+---
+build.dart --machine --changed=web/add_person.dart
+
+build.dart finished [2446 ms]
+
+---
+build.dart --machine --changed=web/add_person.dart
+
+build.dart finished [730 ms]
+
+---
+build.dart --machine --changed=web/add_person.dart
+
+build.dart finished [758 ms]
+
+---
+build.dart --machine --changed=web/add_person.html
+
+build.dart finished [1581 ms]
+
+---
+build.dart --machine --changed=web/add_person.dart
+
+build.dart finished [873 ms]
+
+---
+build.dart --machine --changed=web/add_person.dart
+
+build.dart finished [772 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+
+build.dart finished [1003 ms]
+
+---
+build.dart --machine --changed=web/add_person.html
+
+build.dart finished [768 ms]
+
+---
+build.dart --machine --changed=web/list_persons.html
+
+build.dart finished [959 ms]
+
+---
+build.dart --machine --changed=web/list_persons.dart
+
+build.dart finished [1081 ms]
+
+---
+build.dart --machine --changed=web/list_persons.dart
+
+build.dart finished [1192 ms]
+
+---
+build.dart --machine --changed=web/list_persons.dart
+
+build.dart finished [885 ms]
+
+---
+build.dart --machine --changed=web/list_persons.dart
+
+build.dart finished [1013 ms]
+
+---
+build.dart --machine --changed=web/persons.dart
+
+build.dart finished [1007 ms]
+
+---
+build.dart --machine --changed=web/list_persons.html
+
+build.dart finished [837 ms]
+
+---
+build.dart --machine --changed=web/list_persons.html
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"definition for Polymer element with tag name \"add-person-control\" not found.","line":23,"charStart":618,"charEnd":638}}]
+build.dart finished [943 ms]
+
+---
+build.dart --machine --changed=web/add_person.dart
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"definition for Polymer element with tag name \"add-person-control\" not found.","line":23,"charStart":618,"charEnd":638}}]
+build.dart finished [878 ms]
+
+---
+build.dart --machine --changed=web/list_persons.html
+
+build.dart finished [808 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"duplicate definition for custom tag \"person-view\".","line":6,"charStart":216,"charEnd":252}}]
+[{"method":"warning","params":{"file":"web/persons.html","message":"duplicate definition for custom tag \"person-view\"  (second definition).","line":8,"charStart":304,"charEnd":340}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"duplicate definition for custom tag \"person-view\".","line":6,"charStart":216,"charEnd":252}}]
+[{"method":"warning","params":{"file":"web/persons.html","message":"duplicate definition for custom tag \"person-view\"  (second definition).","line":8,"charStart":304,"charEnd":340}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"duplicate definition for custom tag \"person-view\".","line":6,"charStart":216,"charEnd":252}}]
+[{"method":"warning","params":{"file":"web/persons.html","message":"duplicate definition for custom tag \"person-view\"  (second definition).","line":8,"charStart":304,"charEnd":340}}]
+build.dart finished [900 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"duplicate definition for custom tag \"person-view\".","line":6,"charStart":216,"charEnd":252}}]
+[{"method":"warning","params":{"file":"web/persons.html","message":"duplicate definition for custom tag \"person-view\"  (second definition).","line":8,"charStart":304,"charEnd":340}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"duplicate definition for custom tag \"person-view\".","line":6,"charStart":216,"charEnd":252}}]
+[{"method":"warning","params":{"file":"web/persons.html","message":"duplicate definition for custom tag \"person-view\"  (second definition).","line":8,"charStart":304,"charEnd":340}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"duplicate definition for custom tag \"person-view\".","line":6,"charStart":216,"charEnd":252}}]
+[{"method":"warning","params":{"file":"web/persons.html","message":"duplicate definition for custom tag \"person-view\"  (second definition).","line":8,"charStart":304,"charEnd":340}}]
+[{"method":"warning","params":{"file":"web/persons.html","message":"definition for Polymer element with tag name \"list-persons-control\" not found.","line":12,"charStart":405,"charEnd":427}}]
+build.dart finished [873 ms]
+
+---
+build.dart --machine --changed=web/list_persons.html
+
+build.dart finished [960 ms]
+
+---
+build.dart --machine --changed=web/list_persons.html
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":10,"charStart":317,"charEnd":362}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (li) in table context caused voodoo mode.","line":11,"charStart":371,"charEnd":375}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":13,"charStart":449,"charEnd":483}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":15,"charStart":509,"charEnd":520}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (li) in table context caused voodoo mode.","line":16,"charStart":529,"charEnd":534}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":17,"charStart":541,"charEnd":552}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (ul) in table context caused voodoo mode.","line":18,"charStart":557,"charEnd":562}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"End tag (ul) seen too early. Expected other end tag.","line":18,"charStart":557,"charEnd":562}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (div) in table context caused voodoo mode.","line":19,"charStart":565,"charEnd":571}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"End tag (div) seen too early. Expected other end tag.","line":19,"charStart":565,"charEnd":571}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":20,"charStart":572,"charEnd":583}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":20,"charStart":572,"charEnd":583}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (polymer-element) in table context caused voodoo mode.","line":22,"charStart":650,"charEnd":668}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (polymer-element). Ignored.","line":22,"charStart":650,"charEnd":668}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end of file. Expected table content.","line":9,"charStart":303,"charEnd":310}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":10,"charStart":317,"charEnd":362}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (li) in table context caused voodoo mode.","line":11,"charStart":371,"charEnd":375}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":13,"charStart":449,"charEnd":483}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":15,"charStart":509,"charEnd":520}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (li) in table context caused voodoo mode.","line":16,"charStart":529,"charEnd":534}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":17,"charStart":541,"charEnd":552}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (ul) in table context caused voodoo mode.","line":18,"charStart":557,"charEnd":562}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"End tag (ul) seen too early. Expected other end tag.","line":18,"charStart":557,"charEnd":562}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (div) in table context caused voodoo mode.","line":19,"charStart":565,"charEnd":571}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"End tag (div) seen too early. Expected other end tag.","line":19,"charStart":565,"charEnd":571}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":20,"charStart":572,"charEnd":583}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":20,"charStart":572,"charEnd":583}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (polymer-element) in table context caused voodoo mode.","line":22,"charStart":650,"charEnd":668}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (polymer-element). Ignored.","line":22,"charStart":650,"charEnd":668}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end of file. Expected table content.","line":9,"charStart":303,"charEnd":310}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":10,"charStart":317,"charEnd":362}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (li) in table context caused voodoo mode.","line":11,"charStart":371,"charEnd":375}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":13,"charStart":449,"charEnd":483}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":15,"charStart":509,"charEnd":520}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (li) in table context caused voodoo mode.","line":16,"charStart":529,"charEnd":534}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":17,"charStart":541,"charEnd":552}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (ul) in table context caused voodoo mode.","line":18,"charStart":557,"charEnd":562}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"End tag (ul) seen too early. Expected other end tag.","line":18,"charStart":557,"charEnd":562}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (div) in table context caused voodoo mode.","line":19,"charStart":565,"charEnd":571}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"End tag (div) seen too early. Expected other end tag.","line":19,"charStart":565,"charEnd":571}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":20,"charStart":572,"charEnd":583}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":20,"charStart":572,"charEnd":583}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (polymer-element) in table context caused voodoo mode.","line":22,"charStart":650,"charEnd":668}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (polymer-element). Ignored.","line":22,"charStart":650,"charEnd":668}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end of file. Expected table content.","line":9,"charStart":303,"charEnd":310}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":10,"charStart":317,"charEnd":362}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (li) in table context caused voodoo mode.","line":11,"charStart":371,"charEnd":375}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":13,"charStart":449,"charEnd":483}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":15,"charStart":509,"charEnd":520}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (li) in table context caused voodoo mode.","line":16,"charStart":529,"charEnd":534}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":17,"charStart":541,"charEnd":552}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (ul) in table context caused voodoo mode.","line":18,"charStart":557,"charEnd":562}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"End tag (ul) seen too early. Expected other end tag.","line":18,"charStart":557,"charEnd":562}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (div) in table context caused voodoo mode.","line":19,"charStart":565,"charEnd":571}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"End tag (div) seen too early. Expected other end tag.","line":19,"charStart":565,"charEnd":571}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":20,"charStart":572,"charEnd":583}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":20,"charStart":572,"charEnd":583}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (polymer-element) in table context caused voodoo mode.","line":22,"charStart":650,"charEnd":668}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (polymer-element). Ignored.","line":22,"charStart":650,"charEnd":668}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end of file. Expected table content.","line":9,"charStart":303,"charEnd":310}}]
+build.dart finished [841 ms]
+
+---
+build.dart --machine --changed=web/list_persons.html
+
+build.dart finished [773 ms]
+
+---
+build.dart --machine --changed=web/persons.html
+
+build.dart finished [843 ms]
+

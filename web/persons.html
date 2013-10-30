@@ -3,39 +3,15 @@ Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
 for details. All rights reserved. Use of this source code is governed by a
 BSD-style license that can be found in the LICENSE file.
 -->
+<link rel="import" href="add_person.html">
+<link rel="import" href="list_persons.html">
 <polymer-element name="person-view">
 <template>
   <div id="main-content">
     <h1>Persons</h1>
-    <ul>
-      <template repeat="{{person in app.persons}}">
-        <li>{{person.firstname}}</li>
-      </template>
-    </ul>
-    <br>
+    <list-persons-control></list-persons-control>
     <h2>Add new</h2>
-    <div>
-    <form id="new-person-form">
-     <table>
-      <tr>
-        <td>Firstname</td>
-        <td><input type="text" id="person-firstname" value="{{firstname}}"></td>
-      </tr>
-      <tr>
-       <td colspan="2">
-         <ul>
-           <template repeat="{{error in errors}}">
-             <li>Please enter a {{error}}</li>
-           </template>
-         </ul>
-       </td>
-      </tr>
-      <tr>
-       <td colspan="2"><button type="submit" on-click="{{newPersonSubmit}}">Add</button></td>
-      </tr>
-     </table>
-     </form>
-    </div>
+    <add-person-control></add-person-control>
   </div>
 </template>
 <script type="application/dart" src="persons.dart"></script>

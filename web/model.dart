@@ -17,18 +17,19 @@ class AppModel extends Observable
   AppModel._() 
   {
     persons = new ObservableList<Person>();
-    addPerson("Keller", "Marcel", "29.12.1993", "078 854 48 40", true);
+    addPerson("Keller", "Marcel", "29.12.1993", "078 854 48 40", "marcel.keller1993@gmail.com", true);
   }
   
-  void addPerson(String name, String firstname, String date, String number, bool trainer)
+  void addPerson(String name, String firstname, String birthday, String phoneNumber, String email, bool trainer)
   {
     var p = new Person();
     p.name = name;
     p.firstname = firstname;
-    p.date = date;
-    p.mobileNumber = number;
+    p.birthday = birthday;
+    p.phoneNumber = phoneNumber;
+    p.email = email;
     p.isTrainer = trainer;
-        
+
     persons.add(p);
   }
 }
@@ -37,8 +38,9 @@ class Person extends Observable
 {
   @observable String name;
   @observable String firstname;
-  @observable String date;
-  @observable String mobileNumber;
+  @observable String birthday;
+  @observable String phoneNumber;
+  @observable String email;
   @observable bool isTrainer;
     
   Person();
