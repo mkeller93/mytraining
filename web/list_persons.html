@@ -6,6 +6,10 @@ BSD-style license that can be found in the LICENSE file.
 <polymer-element name="list-persons-control">
 <template>
   <div id="main-content">
+    <template if="{{deletedPerson != null}}">
+      <span style="color: red;">Just deleted {{deletedPerson.firstname}}.</span>
+      <button on-click={{undoDelete}}>Undo</button>
+    </template>
     <table>
       <tr>
         <td>Name</td>

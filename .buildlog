@@ -1808,3 +1808,51 @@ build.dart --machine --changed=web/add_person.html
 [{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":31,"charStart":957,"charEnd":968}}]
 build.dart finished [794 ms]
 
+---
+build.dart --machine --changed=web/list_persons.html
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":22,"charStart":685,"charEnd":730}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":22,"charStart":685,"charEnd":730}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":22,"charStart":685,"charEnd":730}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":22,"charStart":685,"charEnd":730}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":35,"charStart":1152,"charEnd":1163}}]
+build.dart finished [793 ms]
+
+---
+build.dart --machine --changed=web/list_persons.dart
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":22,"charStart":685,"charEnd":730}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":22,"charStart":685,"charEnd":730}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":22,"charStart":685,"charEnd":730}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":22,"charStart":685,"charEnd":730}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":35,"charStart":1152,"charEnd":1163}}]
+build.dart finished [816 ms]
+
+---
+build.dart --machine --changed=web/list_persons.dart
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":22,"charStart":685,"charEnd":730}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":22,"charStart":685,"charEnd":730}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":22,"charStart":685,"charEnd":730}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected start tag (template) in table context caused voodoo mode.","line":22,"charStart":685,"charEnd":730}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template) in table context caused voodoo mode.","line":35,"charStart":1152,"charEnd":1163}}]
+[{"method":"warning","params":{"file":"web/list_persons.html","message":"Unexpected end tag (template). Ignored.","line":35,"charStart":1152,"charEnd":1163}}]
+build.dart finished [790 ms]
+

@@ -8,6 +8,8 @@ import 'model.dart';
 class ListPersonsControl extends PolymerElement 
 {
   @observable AppModel app;
+  @observable Person deletedPerson;
+  
   
   ListPersonsControl.created() : super.created() 
   {
@@ -19,5 +21,12 @@ class ListPersonsControl extends PolymerElement
     var id = int.parse(target.attributes["person-id"]);
     var person = app.persons.where((p) => p.id == id).first;
     app.persons.remove(person);
+    deletedPerson = person;
+  }
+  
+  void undoDelete(Event event, var detail, var target)
+  {
+    app.persons.add(deletedPerson);
+    deletedPerson = null;
   }
 }
