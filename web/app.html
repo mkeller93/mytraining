@@ -4,22 +4,44 @@ for details. All rights reserved. Use of this source code is governed by a
 BSD-style license that can be found in the LICENSE file.
 -->
 <link rel="import" href="persons.html">
-<link rel="import" href="main.html">
+<link rel="import" href="trainings.html">
 <link rel="import" href="login.html">
 <polymer-element name="training-app">
 <template>
-  <template if="{{app.currentUser == null}}">
-    <login-control></login-control>
-  </template>
-  <template if="{{app.currentUser != null}}">
-    <div>
-      <a href="#persons">Persons</a>
-      <a href="#trainings">Trainings</a>
-    </div>
-    <template if="{{app.content == 'persons'}}">
-      <person-view></person-view>
+  <div id="header">
+    <span>
+      {{app.currentUser.username}}
+      <button on-click="{{logout}}">Logout</button>
+    </span>
+  </div>
+  <div id="navigation">
+    <template if="{{app.currentUser != null}}">
+      <ul>
+        <li><a href="#trainings">Trainings</a></li>
+        <template if="{{app.isAdmin}}">
+          <li><a href="#persons">Persons</a></li>
+          <li><a href="#users">Users</a></li>
+        </template>
+      </ul>
     </template>
-  </template>
+  </div>  
+  <div id="content">
+    <template if="{{app.currentUser == null}}">
+      <login-control></login-control>
+    </template>
+    <template if="{{app.currentUser != null}}">
+      <template if="{{app.content == 'trainings'}}">
+        <trainings-view></trainings-view>
+      </template>
+      <template if="{{app.content == 'persons'}}">
+        <persons-view></persons-view>
+      </template>
+      <h1>Welcome to Training Coordinator</h1>
+    </template>
+  </div>
+  <div id="footer">
+  footer
+  </div>
 </template>
 <script type="application/dart" src="app.dart"></script>
 </polymer-element>

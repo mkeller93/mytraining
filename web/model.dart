@@ -15,6 +15,7 @@ class AppModel extends Observable
     
   List<User> users;
   @observable User currentUser = null;
+  @observable bool isAdmin = false;
   
   @observable ObservableList<Person> trainers;
   @observable ObservableList<Person> children;
@@ -28,9 +29,32 @@ class AppModel extends Observable
     
     addPerson("Keller", "Marcel", "29.12.1993", "078 854 48 40", "marcel.keller1993@gmail.com", true);
     
-    User u = new User("admin", "admin", Role.ADMIN);
-    users.add(u);
-    currentUser = u;
+    User admin = new User("admin", "admin", Role.ADMIN);
+    User user = new User("user", "user", Role.USER);
+    
+    users.add(admin);
+    users.add(user);
+    
+    login("admin", "admin");
+  }
+  
+  bool login(String username, String password)
+  {
+    var all_users = users.where((u) => u.username == username && u.password == password);
+
+    if (users.length == 0)
+    {
+      return false;
+    }
+
+    currentUser = all_users.first;
+    isAdmin = (currentUser.role == Role.ADMIN);
+  }
+  
+  void logout()
+  {
+    currentUser = null;
+    isAdmin = false;
   }
   
   void addPerson(String name, String firstname, String birthday, String phoneNumber, String email, bool trainer)
@@ -62,7 +86,7 @@ class Role
   static const Role ADMIN = const Role._(adminString);
   static const Role USER = const Role._(userString);
   
-  final String name;
+  @observable final String name;
   
   const Role._(this.name);
 }

@@ -5,11 +5,13 @@ BSD-style license that can be found in the LICENSE file.
 -->
 <link rel="import" href="add_person.html">
 <link rel="import" href="list_persons.html">
-<polymer-element name="person-view">
+<polymer-element name="persons-view">
 <template>
-  <div>
+  <div id="menu">
     <button on-click="{{updateView}}" view="list">List</button>
-    <button on-click="{{updateView}}" view="add">Add person</button>     
+    <template if="{{app.isAdmin}}">
+      <button on-click="{{updateView}}" view="add">Add Person</button>
+    </template>
   </div>
   <div id="main-content">
     <template if="{{action == 'list'}}">
@@ -18,11 +20,11 @@ BSD-style license that can be found in the LICENSE file.
       <h1>Children</h1>
       <list-persons-control persons="{{app.children}}"></list-persons-control>
     </template>
-    <template if="{{action == 'add'}}">
+    <template if="{{app.isAdmin && action == 'add'}}">
       <h2>Add new person</h2>
       <add-person-control></add-person-control>      
     </template>
-  </div>
+  </div> 
 </template>
 <script type="application/dart" src="persons.dart"></script>
 </polymer-element>

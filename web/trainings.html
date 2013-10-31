@@ -1,0 +1,22 @@
+<!--
+Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
+for details. All rights reserved. Use of this source code is governed by a
+BSD-style license that can be found in the LICENSE file.
+-->
+<polymer-element name="trainings-view">
+<template>
+  <div id="menu">
+    <button on-click="{{updateView}}" view="list">List</button>
+    <button on-click="{{updateView}}" view="add">Add Training</button>
+  </div>
+  <div id="main-content">
+    <template if="{{action == 'list'}}">
+      
+    </template>
+    <template if="{{action == 'add'}}">
+      
+    </template>
+  </div>
+</template>
+<script type="application/dart" src="trainings.dart"></script>
+</polymer-element>

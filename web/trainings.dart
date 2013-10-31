@@ -4,14 +4,14 @@ import 'dart:html';
 import 'package:polymer/polymer.dart';
 import 'model.dart';
 
-@CustomTag('main-view')
-class MainView extends PolymerElement 
+@CustomTag('trainings-view')
+class TrainingsView extends PolymerElement 
 {
   @observable AppModel app;
 
   bool get applyAuthorStyles => true;
   
-  MainView.created() : super.created() 
+  TrainingsView.created() : super.created() 
   {
     app = appModel;
   }

@@ -17,6 +17,11 @@ class TrainingApp extends PolymerElement
     windowLocation.changes.listen(_location_changed);
   }
   
+  void logout(Event e, var detail, var target)
+  {
+    app.logout();
+  }
+  
   _location_changed(_)
   {
     if (window.location.hash != "")

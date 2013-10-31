@@ -23,15 +23,11 @@ class LoginControl extends PolymerElement
   
   void login(Event e, var target, var node)
   {
-    var users = app.users.where((u) => u.username == username && u.password == password);
+    bool logged_in = app.login(username, password);
 
-    if (users.length == 0)
+    if (logged_in == false)
     {
       error = "invalid username or password";
-    }
-    else
-    {
-      appModel.currentUser = users.first;
     }
   }
 }
