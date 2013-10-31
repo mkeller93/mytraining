@@ -16,13 +16,11 @@ BSD-style license that can be found in the LICENSE file.
   </div>
   <div id="navigation">
     <template if="{{app.currentUser != null}}">
-      <ul>
-        <li><a href="#trainings">Trainings</a></li>
-        <template if="{{app.isAdmin}}">
-          <li><a href="#persons">Persons</a></li>
-          <li><a href="#users">Users</a></li>
-        </template>
-      </ul>
+      <a href="#trainings">Trainings</a><br>
+      <template if="{{app.isAdmin}}">
+        <a href="#persons">Persons</a><br>
+        <a href="#users">Users</a><br>
+      </template>
     </template>
   </div>  
   <div id="content">
@@ -36,7 +34,9 @@ BSD-style license that can be found in the LICENSE file.
       <template if="{{app.content == 'persons'}}">
         <persons-view></persons-view>
       </template>
-      <h1>Welcome to Training Coordinator</h1>
+      <template if="{{app.content == ''}}">
+        <h1>Welcome to Training Coordinator</h1>
+      </template>
     </template>
   </div>
   <div id="footer">

@@ -11,22 +11,17 @@ final appModel = new AppModel._();
 @reflectable
 class AppModel extends Observable 
 {
-  @observable String content;
+  @observable String content = "";
     
-  List<User> users;
+  List<User> users = new List<User>();
   @observable User currentUser = null;
   @observable bool isAdmin = false;
   
-  @observable ObservableList<Person> trainers;
-  @observable ObservableList<Person> children;
+  @observable ObservableList<Person> trainers = new ObservableList<Person>();
+  @observable ObservableList<Person> children = new ObservableList<Person>();
   
   AppModel._() 
   {
-    users = new List<User>();
-    
-    trainers = new ObservableList<Person>();
-    children = new ObservableList<Person>();
-    
     addPerson("Keller", "Marcel", "29.12.1993", "078 854 48 40", "marcel.keller1993@gmail.com", true);
     
     User admin = new User("admin", "admin", Role.ADMIN);
