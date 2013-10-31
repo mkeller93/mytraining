@@ -27,8 +27,10 @@ class AppModel extends Observable
     children = new ObservableList<Person>();
     
     addPerson("Keller", "Marcel", "29.12.1993", "078 854 48 40", "marcel.keller1993@gmail.com", true);
+    
     User u = new User("admin", "admin", Role.ADMIN);
     users.add(u);
+    currentUser = u;
   }
   
   void addPerson(String name, String firstname, String birthday, String phoneNumber, String email, bool trainer)
@@ -40,7 +42,7 @@ class AppModel extends Observable
     p.phoneNumber = phoneNumber;
     p.email = email;
     p.isTrainer = trainer;
-    
+
     if (p.isTrainer)
     {
       trainers.add(p);

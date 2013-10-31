@@ -14,11 +14,10 @@ class AddPersonControl extends PolymerElement
   @observable String birthday;
   @observable String phoneNumber;
   @observable String email;
+  @observable bool trainer = false;
   
   @observable ObservableList<String> errors;
   @observable String success;
-  
-  @published ObservableList<Person> persons;
   
   bool get applyAuthorStyles => true;
   
@@ -35,17 +34,10 @@ class AddPersonControl extends PolymerElement
     
     if (validateValues() == true)
     {
-      var p = new Person();
-      p.firstname = firstname;
-      p.name = name;
-      p.birthday = birthday;
-      p.phoneNumber = phoneNumber;
-      p.email = email;
+      app.addPerson(name, firstname, birthday, phoneNumber, email, trainer);
       
-      persons.add(p);
-      
-      clearValues();
-      success = "Successfully added " + p.toString();
+      success = "Successfully added " + firstname + " " + name;
+      clearValues();      
     }
   }
   
@@ -83,5 +75,6 @@ class AddPersonControl extends PolymerElement
     birthday = "";
     phoneNumber = "";
     email = "";
+    trainer = false;
   }
 }
