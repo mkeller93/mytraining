@@ -9,16 +9,23 @@ BSD-style license that can be found in the LICENSE file.
 <template>
   <div>
     <button on-click="{{updateView}}" view="list">List</button>
-    <button on-click="{{updateView}}" view="add">Add</button>    
+    <button on-click="{{updateView}}" view="add_trainer">Add trainer</button>
+    <button on-click="{{updateView}}" view="add_children">Add children</button>        
   </div>
   <div id="main-content">
     <template if="{{action == 'list'}}">
-      <h1>Persons</h1>
-      <list-persons-control></list-persons-control>
+      <h1>Trainers</h1>
+      <list-persons-control persons="{{app.trainers}}"></list-persons-control>
+      <h1>Children</h1>
+      <list-persons-control persons="{{app.children}}"></list-persons-control>
     </template>
-    <template if="{{action == 'add'}}">
-      <h2>Add new</h2>
-      <add-person-control></add-person-control>
+    <template if="{{action == 'add_trainer'}}">
+      <h2>Add new trainer</h2>
+      <add-person-control persons="{{app.trainers}}"></add-person-control>      
+    </template>
+    <template if="{{action == 'add_children'}}">
+      <h2>Add new children</h2>
+      <add-person-control persons="{{app.children}}"></add-person-control>      
     </template>
   </div>
 </template>

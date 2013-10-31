@@ -11,12 +11,16 @@ final appModel = new AppModel._();
 @reflectable
 class AppModel extends Observable 
 {
-  @observable ObservableList<Person> persons;
   @observable String content;
     
+  @observable ObservableList<Person> trainers;
+  @observable ObservableList<Person> children;
+  
   AppModel._() 
   {
-    persons = new ObservableList<Person>();
+    trainers = new ObservableList<Person>();
+    children = new ObservableList<Person>();
+    
     addPerson("Keller", "Marcel", "29.12.1993", "078 854 48 40", "marcel.keller1993@gmail.com", true);
   }
   
@@ -29,8 +33,15 @@ class AppModel extends Observable
     p.phoneNumber = phoneNumber;
     p.email = email;
     p.isTrainer = trainer;
-
-    persons.add(p);
+    
+    if (p.isTrainer)
+    {
+      trainers.add(p);
+    }
+    else
+    {
+      children.add(p);
+    }
   }
 }
 

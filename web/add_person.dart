@@ -14,10 +14,11 @@ class AddPersonControl extends PolymerElement
   @observable String birthday;
   @observable String phoneNumber;
   @observable String email;
-  @observable bool isTrainer;
   
   @observable ObservableList<String> errors;
   @observable String success;
+  
+  @published ObservableList<Person> persons;
   
   AddPersonControl.created() : super.created() 
   {
@@ -38,9 +39,8 @@ class AddPersonControl extends PolymerElement
       p.birthday = birthday;
       p.phoneNumber = phoneNumber;
       p.email = email;
-      p.isTrainer = isTrainer;
       
-      app.persons.add(p);
+      persons.add(p);
       
       clearValues();
       success = "Successfully added the Person";
@@ -81,6 +81,5 @@ class AddPersonControl extends PolymerElement
     birthday = "";
     phoneNumber = "";
     email = "";
-    isTrainer = false;
   }
 }
