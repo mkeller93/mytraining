@@ -12,6 +12,8 @@ class ListPersonsControl extends PolymerElement
   
   @published ObservableList<Person> persons;
   
+  bool get applyAuthorStyles => true;
+  
   ListPersonsControl.created() : super.created() 
   {
     app = appModel;

@@ -20,6 +20,8 @@ class AddPersonControl extends PolymerElement
   
   @published ObservableList<Person> persons;
   
+  bool get applyAuthorStyles => true;
+  
   AddPersonControl.created() : super.created() 
   {
     app = appModel;
@@ -43,7 +45,7 @@ class AddPersonControl extends PolymerElement
       persons.add(p);
       
       clearValues();
-      success = "Successfully added the Person";
+      success = "Successfully added " + p.toString();
     }
   }
   

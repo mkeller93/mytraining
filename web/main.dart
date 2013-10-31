@@ -9,6 +9,8 @@ class MainView extends PolymerElement
 {
   @observable AppModel app;
 
+  bool get applyAuthorStyles => true;
+  
   MainView.created() : super.created() 
   {
     app = appModel;

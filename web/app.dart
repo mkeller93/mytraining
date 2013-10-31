@@ -9,6 +9,8 @@ class TrainingApp extends PolymerElement
 {
   @observable AppModel app;
   
+  bool get applyAuthorStyles => true;
+  
   TrainingApp.created() : super.created() 
   {
     app = appModel;

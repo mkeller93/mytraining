@@ -1,0 +1,17 @@
+<!--
+Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
+for details. All rights reserved. Use of this source code is governed by a
+BSD-style license that can be found in the LICENSE file.
+-->
+<polymer-element name="login-control">
+<template>
+  <h1>Login</h1>
+  <span class="error">{{error}}</span>
+  <br>
+  <input type="text" value="{{username}}">
+  <input type="password" value="{{password}}">
+  <button on-click="{{login}}">login</button>
+</template>
+<script type="application/dart" src="login.dart"></script>
+</polymer-element>
+

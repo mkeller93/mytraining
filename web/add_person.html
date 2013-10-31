@@ -8,7 +8,7 @@ BSD-style license that can be found in the LICENSE file.
   <div id="main-content">
     <div>
     <template if="{{success != ''}}">
-      <span style="color: green;">{{success}}</span>
+      <span class="success">{{success}}</span>
     </template>
     <template if="{{success == ''}}">
       <form id="new-person-form">
@@ -34,7 +34,7 @@ BSD-style license that can be found in the LICENSE file.
           <td><input type="text" value="{{email}}"></td>
         </tr>
         <tr>
-         <td colspan="2">
+         <td colspan="2" class="error">
            <ul>
              <template repeat="{{error in errors}}">
                <li>Please enter a {{error}}</li>

@@ -13,15 +13,22 @@ class AppModel extends Observable
 {
   @observable String content;
     
+  List<User> users;
+  @observable User currentUser = null;
+  
   @observable ObservableList<Person> trainers;
   @observable ObservableList<Person> children;
   
   AppModel._() 
   {
+    users = new List<User>();
+    
     trainers = new ObservableList<Person>();
     children = new ObservableList<Person>();
     
     addPerson("Keller", "Marcel", "29.12.1993", "078 854 48 40", "marcel.keller1993@gmail.com", true);
+    User u = new User("admin", "admin", Role.ADMIN);
+    users.add(u);
   }
   
   void addPerson(String name, String firstname, String birthday, String phoneNumber, String email, bool trainer)
@@ -45,6 +52,28 @@ class AppModel extends Observable
   }
 }
 
+class Role
+{
+  static const String adminString = "admin";
+  static const String userString = "user";
+  
+  static const Role ADMIN = const Role._(adminString);
+  static const Role USER = const Role._(userString);
+  
+  final String name;
+  
+  const Role._(this.name);
+}
+
+class User extends Observable
+{
+  @observable String username;
+  @observable String password;
+  @observable Role role;
+  
+  User(this.username, this.password, this.role);
+}
+
 class Person extends Observable
 {
   static int all_id = 0;
@@ -62,5 +91,5 @@ class Person extends Observable
     id = Person.all_id++;
   }
   
-  String toString() => "$firstname $name ${isTrainer ? ' (trainer)' : ''}";
+  String toString() => "$firstname $name";
 }

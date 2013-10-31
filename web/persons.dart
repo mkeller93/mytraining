@@ -10,6 +10,8 @@ class PersonView extends PolymerElement
   @observable AppModel app;  
   @observable String action;
   
+  bool get applyAuthorStyles => true;
+  
   PersonView.created() : super.created() 
   {
     app = appModel;

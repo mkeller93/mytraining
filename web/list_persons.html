@@ -7,7 +7,7 @@ BSD-style license that can be found in the LICENSE file.
 <template>
   <div id="main-content">
     <template if="{{deletedPerson != null}}">
-      <span style="color: red;">Just deleted {{deletedPerson.firstname}}.</span>
+      <span class="error">Just deleted {{deletedPerson.firstname}} {{deletedPerson.name}}</span>
       <button on-click={{undoDelete}}>Undo</button>
     </template>
     <table>
@@ -16,7 +16,7 @@ BSD-style license that can be found in the LICENSE file.
         <td>Birthday</td>
         <td>Phone Number</td>
         <td>Email</td>
-        <td>Trainer</td>
+        <td>Total Trainings</td>
         <td>Action</td>
       </tr>
       <template repeat="{{person in persons}}">
@@ -25,11 +25,7 @@ BSD-style license that can be found in the LICENSE file.
           <td>{{person.birthday}}</td>
           <td>{{person.phoneNumber}}</td>
           <td>{{person.email}}</td>
-          <td>
-            <template if={{person.isTrainer}}>
-              x
-            </template>
-          </td>
+          <td>NA yet</td>
           <td><button on-click="{{deletePerson}}" person-id="{{person.id}}">Delete</button></td>
         </tr>
       </template>
