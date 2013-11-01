@@ -5,30 +5,38 @@
 library training.web.model;
 
 import 'package:polymer/polymer.dart';
+import "training_config.dart";
+import "ini_parser.dart";
 
 final appModel = new AppModel._();
 
 @reflectable
 class AppModel extends Observable 
-{
+{  
   @observable String content = "";
     
   List<User> users = new List<User>();
   @observable User currentUser = null;
-  @observable bool isAdmin = false;
   
   @observable ObservableList<Person> trainers = new ObservableList<Person>();
   @observable ObservableList<Person> children = new ObservableList<Person>();
   
+  ObservableList<Navigation> navigations = new ObservableList<Navigation>();
+  @observable ObservableList<NavigationItem> navigation = new ObservableList<NavigationItem>();
+  
   AppModel._() 
   {
-    addPerson("Keller", "Marcel", "29.12.1993", "078 854 48 40", "marcel.keller1993@gmail.com", true);
+    parseNavigation();
     
+    addPerson("Keller", "Marcel", "29.12.1993", "078 854 48 40", "marcel.keller1993@gmail.com", true);
+        
     User admin = new User("admin", "admin", Role.ADMIN);
     User user = new User("user", "user", Role.USER);
+    User viewer = new User("viewer", "viewer", Role.VIEWER);
     
     users.add(admin);
     users.add(user);
+    users.add(viewer);
     
     login("admin", "admin");
   }
@@ -43,13 +51,65 @@ class AppModel extends Observable
     }
 
     currentUser = all_users.first;
-    isAdmin = (currentUser.role == Role.ADMIN);
   }
   
   void logout()
   {
     currentUser = null;
-    isAdmin = false;
+    navigation = new ObservableList<NavigationItem>();
+  }
+  
+  void parseNavigation()
+  {    
+    IniParser config = new IniParser();
+    config.parseString(TrainingConfig.config);
+    
+    navigations.clear();
+    
+    for (Section section in config.sections)
+    {        
+      for(Option option in section.options)
+      {
+        Navigation n = new Navigation(section.name);
+
+        String name = option.key;
+        Role role = Role.values.where((r) => r.name == name).first;
+        n.role = role;
+        
+        for (String item in option.value.split(";"))
+        {
+          n.items = new List<NavigationItem>();
+          String item_name = item.split(":").first;
+          String item_target = item.split(":").last;         
+          
+          NavigationItem ni = new NavigationItem(item_name, item_target);
+          n.items.add(ni);
+          print("--------");
+          print("Add new item " + n.role.name + n.name + item_name + item_target);
+          print("--------");
+          
+        }
+        
+        //print("Navigation: " + n.name + n.role.name);
+        navigations.add(n);
+      }
+    }
+  }
+  
+  List<NavigationItem> getNavigation(String name)
+  {
+    if(navigations != null)
+    { 
+      //print("get navigation: " + name);
+      var all = navigations.where((n) => n.role.name == currentUser.role.name && n.name == name);
+      if (all.length > 0)
+      {
+        //print("Navigation: " + all.first.name + all.first.role.name);
+        return all.first.items;
+      }
+      
+      return new List<NavigationItem>();
+    }
   }
   
   void addPerson(String name, String firstname, String birthday, String phoneNumber, String email, bool trainer)
@@ -73,15 +133,36 @@ class AppModel extends Observable
   }
 }
 
+class Navigation 
+{
+  String name;
+  Role role;
+  List<NavigationItem> items;
+  
+  Navigation(this.name);
+}
+
+class NavigationItem extends Observable
+{
+  @observable String name;
+  @observable String target;
+  
+  NavigationItem(this.name, this.target);
+}
+
 class Role
 {
   static const String adminString = "admin";
   static const String userString = "user";
+  static const String viewerString = "viewer";
   
   static const Role ADMIN = const Role._(adminString);
   static const Role USER = const Role._(userString);
+  static const Role VIEWER = const Role._(viewerString);
   
   @observable final String name;
+  
+  static List<Role> values = new List<Role>()..add(ADMIN)..add(USER)..add(VIEWER);
   
   const Role._(this.name);
 }
