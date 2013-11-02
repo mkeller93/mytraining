@@ -12,10 +12,14 @@ class PersonsView extends PolymerElement
   
   bool get applyAuthorStyles => true;
   
+  @observable ObservableList<NavigationItem> menuItems;
+  
   PersonsView.created() : super.created() 
   {
     app = appModel;
     action = "list";
+    menuItems = new ObservableList<NavigationItem>();
+    menuItems = app.getNavigation("persons");
   }
   
   void updateView(Event event, var detail, var target)

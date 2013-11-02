@@ -8,9 +8,12 @@ import 'model.dart';
 class ListPersonsControl extends PolymerElement 
 {
   @observable AppModel app;
-  @observable Person deletedPerson;
+  @observable Person personToDelete;
+  @observable String action = "list";
   
   @published ObservableList<Person> persons;
+  @published bool edit = false;
+  @published bool delete = false;
   
   bool get applyAuthorStyles => true;
   
@@ -19,21 +22,23 @@ class ListPersonsControl extends PolymerElement
     app = appModel;
   }
   
-  void deletePerson(Event event, var detail, var target)
+  void showDeletePerson(Event event, var detail, var target)
   {
     var id = int.parse(target.attributes["person-id"]);
     //var person = app.persons.where((p) => p.id == id).first;
     var person = persons.where((p) => p.id == id).first;
     
-    //app.persons.remove(person);
-    persons.remove(person);
-    
-    deletedPerson = person;
+    personToDelete = person; 
   }
   
-  void undoDelete(Event event, var detail, var target)
+  void deletePerson(Event e)
   {
-    persons.add(deletedPerson);
-    deletedPerson = null;
+    persons.remove(personToDelete);
+    action = "list";
+  }
+  
+  void cancelDelete(Event e)
+  {
+    action = "list";
   }
 }

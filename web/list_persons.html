@@ -6,30 +6,42 @@ BSD-style license that can be found in the LICENSE file.
 <polymer-element name="list-persons-control">
 <template>
   <div id="main-content">
-    <template if="{{deletedPerson != null}}">
-      <span class="error">Just deleted {{deletedPerson.firstname}} {{deletedPerson.name}}</span>
-      <button on-click={{undoDelete}}>Undo</button>
-    </template>
-    <table>
-      <tr>
-        <td>Name</td>
-        <td>Birthday</td>
-        <td>Phone Number</td>
-        <td>Email</td>
-        <td>Total Trainings</td>
-        <td>Action</td>
-      </tr>
-      <template repeat="{{person in persons}}">
+   <template if="{{action == 'delete'}}">
+    Really delete {{personToDelete.firstname}} {{personToDelete.name}}?
+    <button on-click="{{deletePerson}}">Yes</button>
+    <button on-click="{{cancelDelete}}">No</button>
+   </template>
+    <template if="{{action == 'list'}}">
+      <table>
         <tr>
-          <td>{{person.firstname}} {{person.name}}</td>
-          <td>{{person.birthday}}</td>
-          <td>{{person.phoneNumber}}</td>
-          <td>{{person.email}}</td>
-          <td>NA yet</td>
-          <td><button on-click="{{deletePerson}}" person-id="{{person.id}}">Delete</button></td>
+          <td>Name</td>
+          <td>Birthday</td>
+          <td>Phone Number</td>
+          <td>Email</td>
+          <td>Total Trainings</td>
+          <template if="{{edit == true || delete == true}}">
+            <td>Action</td>
+          </template>
         </tr>
-      </template>
-    </table>
+        <template repeat="{{person in persons}}">
+          <tr>
+            <td>{{person.firstname}} {{person.name}}</td>
+            <td>{{person.birthday}}</td>
+            <td>{{person.phoneNumber}}</td>
+            <td>{{person.email}}</td>
+            <td>NA yet</td>
+            <td>
+              <template if="{{edit == true}}">
+                <button on-click="{{editPerson}}" person-id="{{person.id}}">Edit</button>
+              </template>
+              <template if="{{delete == true}}">
+                <button on-click="{{showDeletePerson}}" person-id="{{person.id}}">Delete</button>
+              </template>
+            </td>    
+          </tr>
+        </template>
+      </table>
+   </template>
   </div>
 </template>
 <script type="application/dart" src="list_persons.dart"></script>

@@ -51,12 +51,13 @@ class AppModel extends Observable
     }
 
     currentUser = all_users.first;
+    setNavigation();
   }
   
   void logout()
   {
     currentUser = null;
-    navigation = new ObservableList<NavigationItem>();
+    setNavigation();
   }
   
   void parseNavigation()
@@ -70,6 +71,8 @@ class AppModel extends Observable
     {        
       for(Option option in section.options)
       {
+        //print("--------");
+        //print("Section " + section.name);
         Navigation n = new Navigation(section.name);
 
         String name = option.key;
@@ -78,38 +81,48 @@ class AppModel extends Observable
         
         for (String item in option.value.split(";"))
         {
-          n.items = new List<NavigationItem>();
-          String item_name = item.split(":").first;
-          String item_target = item.split(":").last;         
+          if (item != "")
+          {
+            String item_name = item.split(":").first;
+            String item_target = item.split(":").last;         
+            
+            NavigationItem ni = new NavigationItem(item_name, item_target);
+            n.items.add(ni);
+          }
           
-          NavigationItem ni = new NavigationItem(item_name, item_target);
-          n.items.add(ni);
-          print("--------");
-          print("Add new item " + n.role.name + n.name + item_name + item_target);
-          print("--------");
+          //print("item " + n.role.name + " " + n.name + " " + item_name + " " + item_target);
           
         }
         
         //print("Navigation: " + n.name + n.role.name);
         navigations.add(n);
+        //print("--------");
       }
     }
   }
   
-  List<NavigationItem> getNavigation(String name)
+  ObservableList<NavigationItem> getNavigation(String name)
   {
-    if(navigations != null)
+    print("get navigtion");
+    if(navigations != null && currentUser != null)
     { 
-      //print("get navigation: " + name);
       var all = navigations.where((n) => n.role.name == currentUser.role.name && n.name == name);
       if (all.length > 0)
       {
-        //print("Navigation: " + all.first.name + all.first.role.name);
         return all.first.items;
       }
       
-      return new List<NavigationItem>();
+      print("return empty");
+      return new ObservableList<NavigationItem>();
     }
+    
+    print("return empty");
+    return new ObservableList<NavigationItem>();
+  }
+  
+  void setNavigation()
+  {
+    navigation = getNavigation("main");
   }
   
   void addPerson(String name, String firstname, String birthday, String phoneNumber, String email, bool trainer)
@@ -137,9 +150,13 @@ class Navigation
 {
   String name;
   Role role;
-  List<NavigationItem> items;
+  ObservableList<NavigationItem> items;
   
-  Navigation(this.name);
+  Navigation(String name)
+  {
+    this.name = name;
+    items = new ObservableList<NavigationItem>();
+  }
 }
 
 class NavigationItem extends Observable

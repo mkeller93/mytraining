@@ -17,7 +17,7 @@ BSD-style license that can be found in the LICENSE file.
     </template>
   </div>
   <div id="navigation">
-    <template repeat="{{item in app.getNavigation('main')}}">
+    <template repeat="{{item in app.navigation}}">
       <a href="{{item.target}}">{{item.name}}</a><br>
     </template>
   </div>  
@@ -38,7 +38,7 @@ BSD-style license that can be found in the LICENSE file.
     </template>
   </div>
   <div id="footer">
-  footer
+  (C) 2013 Marcel Keller
   </div>
 </template>
 <script type="application/dart" src="app.dart"></script>

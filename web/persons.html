@@ -8,10 +8,9 @@ BSD-style license that can be found in the LICENSE file.
 <polymer-element name="persons-view">
 <template>
   <div id="menu">
-    <button on-click="{{updateView}}" view="list">List</button>
-    <template if="{{app.isAdmin}}">
-      <button on-click="{{updateView}}" view="add">Add Person</button>
-    </template>
+   <template repeat="{{item in menuItems}}">
+    <button on-click="{{updateView}}" view="{{item.target}}">{{item.name}}</button>
+   </template>
   </div>
   <div id="main-content">
     <template if="{{action == 'list'}}">
@@ -20,7 +19,19 @@ BSD-style license that can be found in the LICENSE file.
       <h1>Children</h1>
       <list-persons-control persons="{{app.children}}"></list-persons-control>
     </template>
-    <template if="{{app.isAdmin && action == 'add'}}">
+    <template if="{{action == 'edit'}}">
+      <h1>Trainers</h1>
+      <list-persons-control persons="{{app.trainers}}" edit="true"></list-persons-control>
+      <h1>Children</h1>
+      <list-persons-control persons="{{app.children}}" edit="true"></list-persons-control>
+    </template>
+    <template if="{{action == 'delete'}}">
+      <h1>Trainers</h1>
+      <list-persons-control persons="{{app.trainers}}" delete="true"></list-persons-control>
+      <h1>Children</h1>
+      <list-persons-control persons="{{app.children}}" delete="true"></list-persons-control>
+    </template>
+    <template if="{{action == 'add'}}">
       <h2>Add new person</h2>
       <add-person-control></add-person-control>      
     </template>

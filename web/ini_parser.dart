@@ -1,4 +1,4 @@
-library training.web.training_config; 
+library training.web.ini_parser; 
 
 class IniParser
 {

@@ -9,7 +9,7 @@ class TrainingConfig
       "viewer=Persons:#persons;Trainings:#trainings/" +
       "[persons]/" + 
       "admin=List:list;Add person:add;Edit person:edit;Delete Person:delete;/" + 
-      "user=List:list/" + 
+      "user=List:list;/" + 
       "viewer=List:list/" + 
       "[trainings]/" + 
       "admin=List:list;Add training:add;Edit Training:edit;Delete Training:delete/" + 
