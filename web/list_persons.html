@@ -3,15 +3,19 @@ Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
 for details. All rights reserved. Use of this source code is governed by a
 BSD-style license that can be found in the LICENSE file.
 -->
+<link rel="import" href="add_person.html">
 <polymer-element name="list-persons-control">
 <template>
   <div id="main-content">
    <template if="{{action == 'delete'}}">
-    Really delete {{personToDelete.firstname}} {{personToDelete.name}}?
+    Really delete {{selectedPerson.firstname}} {{selectedPerson.name}}?
     <button on-click="{{deletePerson}}">Yes</button>
     <button on-click="{{cancelDelete}}">No</button>
    </template>
-    <template if="{{action == 'list'}}">
+   <template if="{{action == 'edit'}}">
+    <add-person-control person="{{selectedPerson}}"></add-person-control>
+   </template>
+   <template if="{{action == 'list'}}">
       <table>
         <tr>
           <td>Name</td>
@@ -25,7 +29,7 @@ BSD-style license that can be found in the LICENSE file.
         </tr>
         <template repeat="{{person in persons}}">
           <tr>
-            <td>{{person.firstname}} {{person.name}}</td>
+            <td>{{person.firstname}} {{person.name}} {{person.id}}</td>
             <td>{{person.birthday}}</td>
             <td>{{person.phoneNumber}}</td>
             <td>{{person.email}}</td>

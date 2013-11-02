@@ -8,7 +8,7 @@ import 'model.dart';
 class ListPersonsControl extends PolymerElement 
 {
   @observable AppModel app;
-  @observable Person personToDelete;
+  @observable Person selectedPerson;
   @observable String action = "list";
   
   @published ObservableList<Person> persons;
@@ -22,18 +22,31 @@ class ListPersonsControl extends PolymerElement
     app = appModel;
   }
   
-  void showDeletePerson(Event event, var detail, var target)
+  void editPerson(Event event, var detail, var target)
   {
     var id = int.parse(target.attributes["person-id"]);
-    //var person = app.persons.where((p) => p.id == id).first;
+    selectPerson(id);
+    action = "edit";
+  }
+  
+  void showDeletePerson(Event event, var detail, var target)
+  {
+    print("id " + target.attributes["person-id"]);
+    var id = int.parse(target.attributes["person-id"]);
+    selectPerson(id);
+    action = "delete";
+  }
+  
+  void selectPerson(int id)
+  {
     var person = persons.where((p) => p.id == id).first;
     
-    personToDelete = person; 
+    selectedPerson = person;
   }
   
   void deletePerson(Event e)
   {
-    persons.remove(personToDelete);
+    persons.remove(selectedPerson);
     action = "list";
   }
   

@@ -44,14 +44,16 @@ class AppModel extends Observable
   bool login(String username, String password)
   {
     var all_users = users.where((u) => u.username == username && u.password == password);
-
-    if (users.length == 0)
+      
+    if (all_users.length == 0)
     {
+      print("login failed");
       return false;
     }
 
     currentUser = all_users.first;
     setNavigation();
+    return true;
   }
   
   void logout()
@@ -208,6 +210,7 @@ class Person extends Observable
   Person()
   {
     id = Person.all_id++;
+    print("new person id: " + id.toString());
   }
   
   String toString() => "$firstname $name";

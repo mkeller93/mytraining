@@ -7,8 +7,8 @@ import 'model.dart';
 @CustomTag('login-control')
 class LoginControl extends PolymerElement 
 {
-  @observable String username;
-  @observable String password;
+  @observable String username = "";
+  @observable String password = "";
   
   @observable String error;
   

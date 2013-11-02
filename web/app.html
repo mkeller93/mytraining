@@ -9,16 +9,18 @@ BSD-style license that can be found in the LICENSE file.
 <polymer-element name="training-app">
 <template>
   <div id="header">
-    <template if="{{app.currentUser != null}}">
-      <span>    
-        {{app.currentUser.username}}
-        <button on-click="{{logout}}">Logout</button>
-      </span>
-    </template>
+    
   </div>
   <div id="navigation">
     <template repeat="{{item in app.navigation}}">
       <a href="{{item.target}}">{{item.name}}</a><br>
+    </template>
+    <template if="{{app.currentUser != null}}">
+      <br>
+      <span>    
+        {{app.currentUser.username}}
+        <button on-click="{{logout}}">Logout</button>
+      </span>
     </template>
   </div>  
   <div id="content">

@@ -1,5 +1,25 @@
 library training.web.ini_parser; 
 
+class Section
+{
+  String name;
+  List<Option> options;
+  
+  Section(String name)
+  {
+    this.name = name;
+    options = new List<Option>();
+  }
+}
+
+class Option
+{
+  String key;
+  String value;
+  
+  Option(this.key, this.value);
+}
+
 class IniParser
 {
   List<Section> sections = new List<Section>();
@@ -41,24 +61,4 @@ class IniParser
     }
   }
   
-}
-
-class Section
-{
-  String name;
-  List<Option> options;
-  
-  Section(String name)
-  {
-    this.name = name;
-    options = new List<Option>();
-  }
-}
-
-class Option
-{
-  String key;
-  String value;
-  
-  Option(this.key, this.value);
 }
