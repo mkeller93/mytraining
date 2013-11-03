@@ -1,102 +1,91 @@
 library training.web.add_person;
 
 import 'dart:html';
+import "dart:async";
 import 'package:polymer/polymer.dart';
 import 'model.dart';
 
 @CustomTag('add-person-control')
-class AddPersonControl extends PolymerElement 
+class AddPersonControl extends PolymerElement
 {
   @observable AppModel app;
-  
-  @observable String firstname;
-  @observable String name;
-  @observable String birthday;
-  @observable String phoneNumber;
-  @observable String email;
-  @observable bool trainer = false;
-  
+
   @observable ObservableList<String> errors;
   @observable String success;
-  
+
   @published Person person;
-  
+  Person originalPerson;
+
+  static const EventStreamProvider<CustomEvent> _FINISH_EVENT = const EventStreamProvider("finish");
+  Stream<CustomEvent> get onFinish => _FINISH_EVENT.forTarget(this);
+
+  static void _dispatchFinishEvent(Element element, bool canceled)
+  {
+    element.dispatchEvent(new CustomEvent("finish", detail: canceled));
+  }
+
   bool get applyAuthorStyles => true;
-  
-  AddPersonControl.created() : super.created() 
+
+  AddPersonControl.created() : super.created()
   {
     app = appModel;
     errors = new ObservableList<String>();
     success = "";
+
+    originalPerson = person;
   }
-  
+
   void cancel(Event e)
   {
     e.preventDefault();
+
+    if(person != null && originalPerson != null)
+    {
+      person.firstname = originalPerson.firstname;
+      person.name = originalPerson.name;
+      person.birthday = originalPerson.birthday;
+      person.phoneNumber = originalPerson.phoneNumber;
+      person.email = originalPerson.email;
+      person.isTrainer = originalPerson.isTrainer;
+    }
+
+    _dispatchFinishEvent(this, true);
   }
-  
+
   void save(Event e)
   {
     e.preventDefault();
-    
+
     if (validateValues() == true)
     {
-      if (person == null)
-      {
-        app.addPerson(name, firstname, birthday, phoneNumber, email, trainer);
-      
-        success = "Successfully added " + firstname + " " + name;
-      }
-      else
-      {
-        person.name = name;
-        person.firstname = firstname;
-        person.birthday = birthday;
-        person.phoneNumber = phoneNumber;
-        person.email = email;
-        person.isTrainer = trainer;
-        
-        success = "Successfully edited " + firstname + " " + name;
-      }
-      
-      clearValues();      
+      _dispatchFinishEvent(this, false);
     }
   }
-  
+
   bool validateValues()
   {
     errors.clear();
-    if (firstname == "" || firstname == null)
+    if (person.firstname == "" || person.firstname == null)
     {
       errors.add("firstname");
     }
-    if (name == "" || name == null)
+    if (person.name == "" || person.name == null)
     {
       errors.add("name");
     }
-    if (birthday == "" || birthday == null)
+    if (person.birthday == "" || person.birthday == null)
     {
       errors.add("birthday");
     }
-    if (phoneNumber == "" || phoneNumber == null)
+    if (person.phoneNumber == "" || person.phoneNumber == null)
     {
       errors.add("Phone Number");
     }
-    if (email == "" || email == null)
+    if (person.email == "" || person.email == null)
     {
       errors.add("email");
-    }    
-    
+    }
+
     return (errors.length == 0);
-  }
-  
-  void clearValues()
-  {
-    firstname = "";
-    name = "";
-    birthday = "";
-    phoneNumber = "";
-    email = "";
-    trainer = false;
   }
 }

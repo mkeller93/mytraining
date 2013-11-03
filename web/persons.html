@@ -13,6 +13,8 @@ BSD-style license that can be found in the LICENSE file.
    </template>
   </div>
   <div id="main-content">
+    <span class="error">{{error}}</span>
+    <span class="success">{{success}}</span>
     <template if="{{action == 'list'}}">
       <h1>Trainers</h1>
       <list-persons-control persons="{{app.trainers}}"></list-persons-control>
@@ -21,19 +23,13 @@ BSD-style license that can be found in the LICENSE file.
     </template>
     <template if="{{action == 'edit'}}">
       <h1>Trainers</h1>
-      <list-persons-control persons="{{app.trainers}}" edit="true"></list-persons-control>
+      <list-persons-control persons="{{app.trainers}}" editable="true"></list-persons-control>
       <h1>Children</h1>
-      <list-persons-control persons="{{app.children}}" edit="true"></list-persons-control>
-    </template>
-    <template if="{{action == 'delete'}}">
-      <h1>Trainers</h1>
-      <list-persons-control persons="{{app.trainers}}" delete="true"></list-persons-control>
-      <h1>Children</h1>
-      <list-persons-control persons="{{app.children}}" delete="true"></list-persons-control>
+      <list-persons-control persons="{{app.children}}" editable="true"></list-persons-control>
     </template>
     <template if="{{action == 'add'}}">
       <h2>Add new person</h2>
-      <add-person-control></add-person-control>      
+      <add-person-control on-finish="{{addFinish}}" person="{{newPerson}}"></add-person-control>      
     </template>
   </div> 
 </template>

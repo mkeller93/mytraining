@@ -5,23 +5,24 @@ import 'package:polymer/polymer.dart';
 import 'model.dart';
 
 @CustomTag('training-app')
-class TrainingApp extends PolymerElement 
+class TrainingApp extends PolymerElement
 {
   @observable AppModel app;
-  
+
   bool get applyAuthorStyles => true;
-  
-  TrainingApp.created() : super.created() 
+
+  TrainingApp.created() : super.created()
   {
     app = appModel;
     windowLocation.changes.listen(_location_changed);
+    //window.location.hash = "#persons";
   }
-  
+
   void logout(Event e, var detail, var target)
   {
     app.logout();
   }
-  
+
   _location_changed(_)
   {
     if (window.location.hash != "")
