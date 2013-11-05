@@ -17,15 +17,15 @@ BSD-style license that can be found in the LICENSE file.
     <span class="success">{{success}}</span>
     <template if="{{action == 'list'}}">
       <h1>Trainers</h1>
-      <list-persons-control persons="{{app.trainers}}"></list-persons-control>
+      <list-persons-control persons="{{app.data.trainers}}"></list-persons-control>
       <h1>Children</h1>
-      <list-persons-control persons="{{app.children}}"></list-persons-control>
+      <list-persons-control persons="{{app.data.children}}"></list-persons-control>
     </template>
     <template if="{{action == 'edit'}}">
       <h1>Trainers</h1>
-      <list-persons-control persons="{{app.trainers}}" editable="true"></list-persons-control>
+      <list-persons-control persons="{{app.data.trainers}}" editable="true"></list-persons-control>
       <h1>Children</h1>
-      <list-persons-control persons="{{app.children}}" editable="true"></list-persons-control>
+      <list-persons-control persons="{{app.data.children}}" editable="true"></list-persons-control>
     </template>
     <template if="{{action == 'add'}}">
       <h2>Add new person</h2>

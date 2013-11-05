@@ -33,6 +33,10 @@ packages:
     description: html_import
     source: hosted
     version: "0.8.7"
+  json:
+    description: json
+    source: hosted
+    version: "0.8.7"
   logging:
     description: logging
     source: hosted

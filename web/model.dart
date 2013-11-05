@@ -7,6 +7,8 @@ library training.web.model;
 import 'package:polymer/polymer.dart';
 import "training_config.dart";
 import "ini_parser.dart";
+import "role.dart";
+import "data_context.dart";
 
 final appModel = new AppModel._();
 
@@ -24,21 +26,26 @@ class AppModel extends Observable
   ObservableList<Navigation> navigations = new ObservableList<Navigation>();
   @observable ObservableList<NavigationItem> navigation = new ObservableList<NavigationItem>();
   
+  DataContext data;
+  
   AppModel._() 
   {
     parseNavigation();
     
     addPerson("Keller", "Marcel", "29.12.1993", "078 854 48 40", "marcel.keller1993@gmail.com", true);
         
-    User admin = new User("admin", "admin", Role.ADMIN);
-    User user = new User("user", "user", Role.USER);
-    User viewer = new User("viewer", "viewer", Role.VIEWER);
+    User admin = new User("admin", "admin", Role.ADMIN.name);
+    User user = new User("user", "user", Role.USER.name);
+    User viewer = new User("viewer", "viewer", Role.VIEWER.name);
     
     users.add(admin);
     users.add(user);
     users.add(viewer);
     
     login("admin", "admin");
+    
+    data = new DataContext();    
+    data.loadPersons();
   }
   
   bool login(String username, String password)
@@ -108,7 +115,7 @@ class AppModel extends Observable
     print("get navigtion");
     if(navigations != null && currentUser != null)
     { 
-      var all = navigations.where((n) => n.role.name == currentUser.role.name && n.name == name);
+      var all = navigations.where((n) => n.role.name == currentUser.role && n.name == name);
       if (all.length > 0)
       {
         return all.first.items;
@@ -167,51 +174,4 @@ class NavigationItem extends Observable
   @observable String target;
   
   NavigationItem(this.name, this.target);
-}
-
-class Role
-{
-  static const String adminString = "admin";
-  static const String userString = "user";
-  static const String viewerString = "viewer";
-  
-  static const Role ADMIN = const Role._(adminString);
-  static const Role USER = const Role._(userString);
-  static const Role VIEWER = const Role._(viewerString);
-  
-  @observable final String name;
-  
-  static List<Role> values = new List<Role>()..add(ADMIN)..add(USER)..add(VIEWER);
-  
-  const Role._(this.name);
-}
-
-class User extends Observable
-{
-  @observable String username;
-  @observable String password;
-  @observable Role role;
-  
-  User(this.username, this.password, this.role);
-}
-
-class Person extends Observable
-{
-  static int all_id = 0;
-  
-  @observable int id;
-  @observable String name;
-  @observable String firstname;
-  @observable String birthday;
-  @observable String phoneNumber;
-  @observable String email;
-  @observable bool isTrainer;
-    
-  Person()
-  {
-    id = Person.all_id++;
-    print("new person id: " + id.toString());
-  }
-  
-  String toString() => "$firstname $name";
 }

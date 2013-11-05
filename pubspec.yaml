@@ -1,3 +1,4 @@
 name: training
 dependencies:
+  json: any
   polymer: any
