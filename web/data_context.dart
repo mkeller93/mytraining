@@ -25,6 +25,7 @@ class Person extends Observable
     
   Person()
   {
+    isTrainer = false;
   }
   
   String toString() => "$firstname $name";
@@ -53,12 +54,122 @@ class DataContext
     request.setRequestHeader("X-Parse-REST-API-Key", restKey);
   }
   
-  void loadPersons()
+  String personToJson(Person p)
+  {
+    String name = p.name;
+    String fname = p.firstname;
+    String email = p.email;
+    String phone = p.phoneNumber;
+    String birthday = p.birthday;    
+    String trainer = p.isTrainer ? "true" : "false";
+    
+    String data = '{"name":"$name", "firstname":"$fname", "email":"$email", "birthday":"$birthday", "phone":"$phone", "istrainer":$trainer}';
+    return data;
+  }
+  
+  bool addPerson(Person p)
+  {
+    HttpRequest req = new HttpRequest();
+    
+    req.open("POST", personUri, async: false);
+    setRequestHeader(req);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.send(personToJson(p));
+    
+    print("STATUS: " + req.status.toString());
+    
+    if (req.status == 201)
+    {
+      if (p.isTrainer == true)
+      {
+        trainers.add(p);
+      }
+      else
+      {
+        children.add(p);
+      }
+      
+      return true;
+    }
+    
+    return false;
+  }
+  
+  bool updatePerson(Person p)
+  {
+    HttpRequest req = new HttpRequest();
+    
+    String uri = personUri + "/" + p.id;
+
+    req.open("PUT", uri, async: false);
+    setRequestHeader(req);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.send(personToJson(p));
+    
+    print("STATUS: " + req.status.toString());
+    
+    if (req.status == 200)
+    {
+      if (p.isTrainer == true && trainers.contains(p) == false)
+      {
+        trainers.add(p);
+        children.remove(p);
+      }
+      else if(p.isTrainer == false && children.contains(p) == false)
+      {
+        children.add(p);
+        trainers.remove(p);
+      }
+      
+      return true;
+    }
+    
+    return false;
+  }
+  
+  bool deletePerson(Person p)
+  {
+    HttpRequest req = new HttpRequest();
+    
+    String uri = personUri + "/" + p.id;
+    
+    req.open("DELETE", uri, async: false);
+    setRequestHeader(req);
+    req.send();
+    
+    if (req.status == 200)
+    {
+      if (p.isTrainer == true)
+      {
+        trainers.remove(p);
+      }
+      else 
+      {
+        children.remove(p);
+      }
+      
+      return true;
+    }
+    
+    return false;
+  }
+  
+  void loadPersonsAsync()
   {
     HttpRequest.request(personUri, 
-        method: "GET",
+        method: "GET", 
         requestHeaders: {"X-Parse-Application-Id": appId, "X-Parse-REST-API-Key": restKey})
         .then(onGetPersons);    
+  }
+  
+  void loadPersons()
+  {
+    HttpRequest req = new HttpRequest();
+    req.open("GET", personUri, async: false);
+    setRequestHeader(req);
+    req.send();
+    
+    onGetPersons(req);
   }
     
   void onGetPersons(HttpRequest request)

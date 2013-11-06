@@ -3,6 +3,7 @@ library training.web.persons;
 import 'dart:html';
 import 'package:polymer/polymer.dart';
 import 'model.dart';
+import 'data_context.dart';
 
 @CustomTag('persons-view')
 class PersonsView extends PolymerElement
@@ -40,16 +41,15 @@ class PersonsView extends PolymerElement
   {
     if(canceled == false)
     {
-      success = "Successfully added " + newPerson.firstname;
-
-      if (newPerson.isTrainer == true)
+      
+      if (app.data.addPerson(newPerson) == true)
       {
-        app.trainers.add(newPerson);
+        success = "Successfully added $newPerson";  
       }
       else
       {
-        app.children.add(newPerson);
-      }
+        error = "Failed to add person!";
+      }            
     }
 
     action = "list";

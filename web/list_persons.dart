@@ -3,6 +3,7 @@ library training.web.list_persons;
 import 'dart:html';
 import 'package:polymer/polymer.dart';
 import 'model.dart';
+import "data_context.dart";
 
 @CustomTag('list-persons-control')
 class ListPersonsControl extends PolymerElement
@@ -10,6 +11,9 @@ class ListPersonsControl extends PolymerElement
   @observable AppModel app;
   @observable Person selectedPerson;
   @observable String action = "list";
+  
+  @observable String error = "";
+  @observable String success = "";
 
   @published ObservableList<Person> persons;
   @published bool editable = false;
@@ -25,20 +29,19 @@ class ListPersonsControl extends PolymerElement
 
   void editPerson(Event event, var detail, var target)
   {
-    var id = int.parse(target.attributes["person-id"]);
+    var id = target.attributes["person-id"];
     selectPerson(id);
     action = "edit";
   }
 
   void showDeletePerson(Event event, var detail, var target)
   {
-    print("id " + target.attributes["person-id"]);
-    var id = int.parse(target.attributes["person-id"]);
+    var id = target.attributes["person-id"];
     selectPerson(id);
     action = "delete";
   }
 
-  void selectPerson(int id)
+  void selectPerson(String id)
   {
     var person = persons.where((p) => p.id == id).first;
     selectedPerson = person;
@@ -47,7 +50,15 @@ class ListPersonsControl extends PolymerElement
 
   void deletePerson(Event e)
   {
-    persons.remove(selectedPerson);
+    if (app.data.deletePerson(selectedPerson))
+    {
+      success = "Successfully deleted person!";
+    }
+    else
+    {
+      error = "Failed to delete person!";
+    }
+    
     action = "list";
   }
 
@@ -60,18 +71,13 @@ class ListPersonsControl extends PolymerElement
   {
     if (canceled == false)
     {
-      if (selectedPerson.isTrainer != wasTrainer)
+      if (app.data.updatePerson(selectedPerson) == true)
       {
-        if (selectedPerson.isTrainer == true)
-        {
-          app.trainers.add(selectedPerson);
-          app.children.remove(selectedPerson);
-        }
-        else
-        {
-          app.children.add(selectedPerson);
-          app.trainers.remove(selectedPerson);
-        }
+        success = "Successfully updated person!";
+      }
+      else
+      {
+        error = "Failed to update person!";
       }
     }
 

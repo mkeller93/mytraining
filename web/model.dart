@@ -20,9 +20,6 @@ class AppModel extends Observable
   List<User> users = new List<User>();
   @observable User currentUser = null;
   
-  @observable ObservableList<Person> trainers = new ObservableList<Person>();
-  @observable ObservableList<Person> children = new ObservableList<Person>();
-  
   ObservableList<Navigation> navigations = new ObservableList<Navigation>();
   @observable ObservableList<NavigationItem> navigation = new ObservableList<NavigationItem>();
   
@@ -30,9 +27,7 @@ class AppModel extends Observable
   
   AppModel._() 
   {
-    parseNavigation();
-    
-    addPerson("Keller", "Marcel", "29.12.1993", "078 854 48 40", "marcel.keller1993@gmail.com", true);
+    parseNavigation();    
         
     User admin = new User("admin", "admin", Role.ADMIN.name);
     User user = new User("user", "user", Role.USER.name);
@@ -132,26 +127,6 @@ class AppModel extends Observable
   void setNavigation()
   {
     navigation = getNavigation("main");
-  }
-  
-  void addPerson(String name, String firstname, String birthday, String phoneNumber, String email, bool trainer)
-  {
-    var p = new Person();
-    p.name = name;
-    p.firstname = firstname;
-    p.birthday = birthday;
-    p.phoneNumber = phoneNumber;
-    p.email = email;
-    p.isTrainer = trainer;
-
-    if (p.isTrainer)
-    {
-      trainers.add(p);
-    }
-    else
-    {
-      children.add(p);
-    }
   }
 }
 
