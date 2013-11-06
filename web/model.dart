@@ -17,7 +17,6 @@ class AppModel extends Observable
 {  
   @observable String content = "";
     
-  List<User> users = new List<User>();
   @observable User currentUser = null;
   
   ObservableList<Navigation> navigations = new ObservableList<Navigation>();
@@ -28,32 +27,24 @@ class AppModel extends Observable
   AppModel._() 
   {
     parseNavigation();    
-        
-    User admin = new User("admin", "admin", Role.ADMIN.name);
-    User user = new User("user", "user", Role.USER.name);
-    User viewer = new User("viewer", "viewer", Role.VIEWER.name);
-    
-    users.add(admin);
-    users.add(user);
-    users.add(viewer);
-    
-    login("admin", "admin");
-    
+
     data = new DataContext();    
-    data.loadPersons();
+    
+    login("admin", "admin123");    
   }
   
   bool login(String username, String password)
-  {
-    var all_users = users.where((u) => u.username == username && u.password == password);
+  {    
+    var logged_in = data.login(username, password);
       
-    if (all_users.length == 0)
+    if (logged_in == false)
     {
-      print("login failed");
       return false;
     }
+    
+    data.loadPersons();
 
-    currentUser = all_users.first;
+    currentUser = data.user;
     setNavigation();
     return true;
   }

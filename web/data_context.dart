@@ -7,10 +7,9 @@ import 'dart:html';
 class User extends Observable
 {
   @observable String username;
-  @observable String password;
   @observable String role;
   
-  User(this.username, this.password, this.role);
+  User(this.username, this.role);
 }
 
 class Person extends Observable
@@ -39,13 +38,41 @@ class DataContext
   static const String baseUri = "https://api.parse.com/1/classes/";
   
   String personUri = DataContext.baseUri + "persons";
-  String usersUri = DataContext.baseUri + "users";
+  String userUri = DataContext.baseUri + "users";
   
   @observable ObservableList<Person> trainers;
   @observable ObservableList<Person> children;
+
+  User user;
   
   DataContext()
   {
+  }
+  
+  bool login(String username, String password)
+  {
+    HttpRequest req = new HttpRequest();
+    
+    var uri = userUri + "?" + 'where={"username":"$username", "password":"$password"}';
+    
+    req.open("GET", uri, async: false);
+    setRequestHeader(req);
+    
+    req.send();
+    
+    Map data = JSON.parse(req.responseText);
+    if (data['results'].length == 0)
+    {
+      return false;
+    }
+    
+    var item = data['results'][0];
+    String un = item['username'];
+    String role = item['role'];
+    
+    user = new User(un, role);
+    
+    return true;
   }
   
   void setRequestHeader(HttpRequest request)
@@ -74,9 +101,7 @@ class DataContext
     req.open("POST", personUri, async: false);
     setRequestHeader(req);
     req.setRequestHeader("Content-Type", "application/json");
-    req.send(personToJson(p));
-    
-    print("STATUS: " + req.status.toString());
+    req.send(personToJson(p));    
     
     if (req.status == 201)
     {
@@ -105,8 +130,6 @@ class DataContext
     setRequestHeader(req);
     req.setRequestHeader("Content-Type", "application/json");
     req.send(personToJson(p));
-    
-    print("STATUS: " + req.status.toString());
     
     if (req.status == 200)
     {
