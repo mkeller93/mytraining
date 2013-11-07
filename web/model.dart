@@ -13,57 +13,58 @@ import "data_context.dart";
 final appModel = new AppModel._();
 
 @reflectable
-class AppModel extends Observable 
-{  
+class AppModel extends Observable
+{
   @observable String content = "";
-    
+
   @observable User currentUser = null;
-  
+
   ObservableList<Navigation> navigations = new ObservableList<Navigation>();
   @observable ObservableList<NavigationItem> navigation = new ObservableList<NavigationItem>();
-  
-  DataContext data;
-  
-  AppModel._() 
-  {
-    parseNavigation();    
 
-    data = new DataContext();    
-    
-    login("admin", "admin123");    
+  DataContext data;
+
+  AppModel._()
+  {
+    parseNavigation();
+
+    data = new DataContext();
+
+    login("admin", "admin");
   }
-  
+
   bool login(String username, String password)
-  {    
+  {
     var logged_in = data.login(username, password);
-      
+
     if (logged_in == false)
     {
       return false;
     }
-    
+
     data.loadPersons();
+    data.loadTrainings();
 
     currentUser = data.user;
     setNavigation();
     return true;
   }
-  
+
   void logout()
   {
     currentUser = null;
     setNavigation();
   }
-  
+
   void parseNavigation()
-  {    
+  {
     IniParser config = new IniParser();
     config.parseString(TrainingConfig.config);
-    
+
     navigations.clear();
-    
+
     for (Section section in config.sections)
-    {        
+    {
       for(Option option in section.options)
       {
         //print("--------");
@@ -73,60 +74,60 @@ class AppModel extends Observable
         String name = option.key;
         Role role = Role.values.where((r) => r.name == name).first;
         n.role = role;
-        
+
         for (String item in option.value.split(";"))
         {
           if (item != "")
           {
             String item_name = item.split(":").first;
-            String item_target = item.split(":").last;         
-            
+            String item_target = item.split(":").last;
+
             NavigationItem ni = new NavigationItem(item_name, item_target);
             n.items.add(ni);
           }
-          
+
           //print("item " + n.role.name + " " + n.name + " " + item_name + " " + item_target);
-          
+
         }
-        
+
         //print("Navigation: " + n.name + n.role.name);
         navigations.add(n);
         //print("--------");
       }
     }
   }
-  
+
   ObservableList<NavigationItem> getNavigation(String name)
   {
     print("get navigtion");
     if(navigations != null && currentUser != null)
-    { 
+    {
       var all = navigations.where((n) => n.role.name == currentUser.role && n.name == name);
       if (all.length > 0)
       {
         return all.first.items;
       }
-      
+
       print("return empty");
       return new ObservableList<NavigationItem>();
     }
-    
+
     print("return empty");
     return new ObservableList<NavigationItem>();
   }
-  
+
   void setNavigation()
   {
     navigation = getNavigation("main");
   }
 }
 
-class Navigation 
+class Navigation
 {
   String name;
   Role role;
   ObservableList<NavigationItem> items;
-  
+
   Navigation(String name)
   {
     this.name = name;
@@ -138,6 +139,6 @@ class NavigationItem extends Observable
 {
   @observable String name;
   @observable String target;
-  
+
   NavigationItem(this.name, this.target);
 }

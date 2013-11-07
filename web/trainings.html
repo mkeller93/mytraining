@@ -1,9 +1,4 @@
-<!--
-Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
-for details. All rights reserved. Use of this source code is governed by a
-BSD-style license that can be found in the LICENSE file.
-
-<link rel="import" href="add_training.html">
+<!-- <link rel="import" href="add_training.html">-->
 <link rel="import" href="list_trainings.html">
 <polymer-element name="trainings-view">
 <template>
@@ -15,22 +10,19 @@ BSD-style license that can be found in the LICENSE file.
   <div id="main-content">
     <template if="{{action == 'list'}}">
       <h1>Trainings</h1>
-      <list-trainings-control></list-trainings-control>
-    </template>
+      <list-trainings-control trainings="{{app.data.trainings}}"></list-trainings-control>
+    </template> 
     <template if="{{action == 'edit'}}">
-      <h1>Trainings</h1>
-      <list-trainings-control edit="true"></list-trainings-control>
+      <h1>Edit Trainings</h1>
+      <list-trainings-control trainings="{{app.data.trainings}}" editable="true"></list-trainings-control>
     </template>
-    <template if="{{action == 'delete'}}">
-      <h1>Trainers</h1>
-      <list-trainings-control delete="true"></list-trainings-control>
-    </template>
+    <!--  
     <template if="{{action == 'add'}}">
       <h2>Add new training</h2>
       <add-training-control></add-training-control>      
     </template>
+    -->
   </div> 
 </template>
 <script type="application/dart" src="trainings.dart"></script>
 </polymer-element>
--->
