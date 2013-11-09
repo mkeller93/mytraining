@@ -184,6 +184,9 @@ class DataContext
 
     if (req.status == 201)
     {
+      Map data = JSON.parse(req.responseText);
+      p.id = data['objectId'];
+
       if (p.isTrainer == true)
       {
         trainers.add(p);

@@ -30,7 +30,7 @@ class AppModel extends Observable
 
     data = new DataContext();
 
-    login("admin", "admin");
+    //login("admin", "admin");
   }
 
   bool login(String username, String password)
@@ -85,8 +85,6 @@ class AppModel extends Observable
             NavigationItem ni = new NavigationItem(item_name, item_target);
             n.items.add(ni);
           }
-
-          //print("item " + n.role.name + " " + n.name + " " + item_name + " " + item_target);
 
         }
 
