@@ -5,13 +5,13 @@
     <span class="success">{{success}}</span>
     <span class="error">{{error}}</span>
     <template if="{{action == 'delete'}}">
-      Really delete training from {{selectedTraining.date}}?
+      Really delete training from {{selectedTraining.getDate()}}?
       <button on-click="{{deleteTraining}}">Yes</button>
       <button on-click="{{cancelDelete}}">No</button>
     </template>
    
     <template if="{{action == 'edit'}}">
-      <!--  <add-training-control on-finish="{{editFinished}}" training="{{selectedTraining}}"></add-training-control> -->
+      <add-training-control on-finish="{{editFinished}}" training="{{selectedTraining}}"></add-training-control>
     </template>
    
     <template if="{{action == 'list'}}">

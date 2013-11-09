@@ -183,6 +183,7 @@ class DataContext
 
     if (req.status == 200)
     {
+      trainings.remove(t);
       return true;
     }
 

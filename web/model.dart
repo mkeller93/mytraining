@@ -67,8 +67,6 @@ class AppModel extends Observable
     {
       for(Option option in section.options)
       {
-        //print("--------");
-        //print("Section " + section.name);
         Navigation n = new Navigation(section.name);
 
         String name = option.key;
@@ -87,17 +85,13 @@ class AppModel extends Observable
           }
 
         }
-
-        //print("Navigation: " + n.name + n.role.name);
         navigations.add(n);
-        //print("--------");
       }
     }
   }
 
   ObservableList<NavigationItem> getNavigation(String name)
   {
-    print("get navigtion");
     if(navigations != null && currentUser != null)
     {
       var all = navigations.where((n) => n.role.name == currentUser.role && n.name == name);
@@ -106,11 +100,9 @@ class AppModel extends Observable
         return all.first.items;
       }
 
-      print("return empty");
       return new ObservableList<NavigationItem>();
     }
 
-    print("return empty");
     return new ObservableList<NavigationItem>();
   }
 

@@ -21,25 +21,24 @@ class Role
 
 class User extends Observable
 {
-  @observable String username;
-  @observable String role;
+  @observable String username = "";
+  @observable String role = "";
 
   User(this.username, this.role);
 }
 
 class Person extends Observable
 {
-  @observable String id;
-  @observable String name;
-  @observable String firstname;
-  @observable String birthday;
-  @observable String phoneNumber;
-  @observable String email;
-  @observable bool isTrainer;
+  @observable String id = "";
+  @observable String name = "";
+  @observable String firstname = "";
+  @observable String birthday = "";
+  @observable String phoneNumber = "";
+  @observable String email = "";
+  @observable bool isTrainer = false;
 
   Person()
-  {
-    isTrainer = false;
+  {;
   }
 
   String toString() => "$firstname $name";
@@ -56,8 +55,8 @@ class Person extends Observable
 class Training extends Observable
 {
   @observable DateTime date;
-  @observable String notes;
-  @observable String id;
+  @observable String notes = "";
+  @observable String id = "";
 
   @observable ObservableList<Person> trainers;
   @observable ObservableList<Person> children;
@@ -84,7 +83,10 @@ class Training extends Observable
 
   String toJson()
   {
-    String data = '{"notes":"$notes", "date":"$date"}';
+    String d = date.toString();
+    d = d.replaceAll(" ", "T");
+    d += "Z";
+    String data = '{"notes":"$notes", "date":{"__type":"Date", "iso":"$d"}}';
     return data;
   }
 }
