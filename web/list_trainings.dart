@@ -4,6 +4,7 @@ import 'dart:html';
 import 'package:polymer/polymer.dart';
 import 'model.dart';
 import "data_context.dart";
+import 'objects.dart';
 
 @CustomTag('list-trainings-control')
 class ListTrainingsControl extends PolymerElement
@@ -27,14 +28,14 @@ class ListTrainingsControl extends PolymerElement
 
   void editTraining(Event event, var detail, var target)
   {
-    var id = target.attributes["training-id"];
+    String id = target.attributes["training-id"];
     selectTraining(id);
     action = "edit";
   }
 
   void showDeleteTraining(Event event, var detail, var target)
   {
-    var id = target.attributes["training-id"];
+    String id = target.attributes["training-id"];
     selectTraining(id);
     action = "delete";
   }
@@ -45,15 +46,15 @@ class ListTrainingsControl extends PolymerElement
     selectedTraining = training;
   }
 
-  void deletePerson(Event e)
+  void deleteTraining(Event e)
   {
     if (app.data.deleteTraining(selectedTraining))
     {
-      success = "Successfully deleted training!";
+      success = "Successfully deleted training from " + selectedTraining.date.toString();
     }
     else
     {
-      error = "Failed to delete training!";
+      error = "Failed to delete training from " + selectedTraining.date.toString();
     }
 
     action = "list";

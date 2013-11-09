@@ -3,48 +3,7 @@ library training.web.db_context;
 import 'package:polymer/polymer.dart';
 import 'package:json/json.dart' as JSON;
 import 'dart:html';
-
-class User extends Observable
-{
-  @observable String username;
-  @observable String role;
-
-  User(this.username, this.role);
-}
-
-class Person extends Observable
-{
-  @observable String id;
-  @observable String name;
-  @observable String firstname;
-  @observable String birthday;
-  @observable String phoneNumber;
-  @observable String email;
-  @observable bool isTrainer;
-
-  Person()
-  {
-    isTrainer = false;
-  }
-
-  String toString() => "$firstname $name";
-}
-
-class Training extends Observable
-{
-  @observable DateTime date;
-  @observable String notes;
-  @observable String id;
-
-  @observable ObservableList<Person> trainers;
-  @observable ObservableList<Person> children;
-
-  Training()
-  {
-    trainers = new ObservableList<Person>();
-    children = new ObservableList<Person>();
-  }
-}
+import 'objects.dart';
 
 class DataContext
 {
@@ -69,6 +28,73 @@ class DataContext
   {
   }
 
+  // ---------------------------------------------------------------------------------
+  // helper methods
+
+  void setRequestHeader(HttpRequest request)
+  {
+    request.setRequestHeader("X-Parse-Application-Id", appId);
+    request.setRequestHeader("X-Parse-REST-API-Key", restKey);
+  }
+
+  // ---------------------------------------------------------------------------------
+  // training CRUD
+
+  bool addPersonInTraining(Person p, Training t)
+  {
+    HttpRequest req = new HttpRequest();
+
+    req.open("POST", personInTraingUri, async: false);
+    setRequestHeader(req);
+    req.setRequestHeader("Content-Type", "application/json");
+
+    String p_id = p.id;
+    String t_id = t.id;
+    String data = '{"person_id":"$p_id", "training_id":"$t_id"}';
+
+    req.send(data);
+
+    return (req.status == 201);
+  }
+
+  bool addTraining(Training t)
+  {
+    HttpRequest req = new HttpRequest();
+
+    req.open("POST", trainingUri, async: false);
+    setRequestHeader(req);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.send(t.toJson());
+
+    if (req.status == 201)
+    {
+      Map data = JSON.parse(req.responseText);
+      t.id = data['objectId'];
+
+      for(Person p in t.trainers)
+      {
+        if (addPersonInTraining(p, t) == false)
+        {
+          return false;
+        }
+      }
+
+      for(Person p in t.children)
+      {
+        if (addPersonInTraining(p, t))
+        {
+          return false;
+        }
+      }
+
+      trainings.add(t);
+
+      return true;
+    }
+
+    return false;
+  }
+
   void loadTrainings()
   {
     trainings = new ObservableList<Training>();
@@ -86,6 +112,15 @@ class DataContext
       Training t = new Training();
       t.id = id;
       t.notes = item['notes'];
+
+      String date = item['date'].toString();
+
+      if (date != null)
+      {
+        // get date from ISO string
+        date = date.substring(20, 30);
+        t.date = DateTime.parse(date);
+      }
 
       HttpRequest r = new HttpRequest();
       String uri = personInTraingUri + '?where={"training_id":"$id"}';
@@ -113,65 +148,49 @@ class DataContext
         }
       }
 
-      print("add training!");
       trainings.add(t);
     }
   }
 
   bool updateTraining(Training t)
   {
-    return true;
+    HttpRequest req = new HttpRequest();
+
+    String uri = trainingUri + "/" + t.id;
+
+    req.open("PUT", uri, async: false);
+    setRequestHeader(req);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.send(t.toJson());
+
+    if (req.status == 200)
+    {
+      return true;
+    }
+
+    return false;
   }
 
   bool deleteTraining(Training t)
   {
-    return true;
-  }
-
-  bool login(String username, String password)
-  {
     HttpRequest req = new HttpRequest();
 
-    var uri = userUri + "?" + 'where={"username":"$username", "password":"$password"}';
+    String uri = trainingUri + "/" + t.id;
 
-    req.open("GET", uri, async: false);
+    req.open("DELETE", uri, async: false);
     setRequestHeader(req);
-
     req.send();
 
-    Map data = JSON.parse(req.responseText);
-    if (data['results'].length == 0)
+    if (req.status == 200)
     {
-      return false;
+      return true;
     }
 
-    var item = data['results'][0];
-    String un = item['username'];
-    String role = item['role'];
-
-    user = new User(un, role);
-
-    return true;
+    return false;
   }
 
-  void setRequestHeader(HttpRequest request)
-  {
-    request.setRequestHeader("X-Parse-Application-Id", appId);
-    request.setRequestHeader("X-Parse-REST-API-Key", restKey);
-  }
-
-  String personToJson(Person p)
-  {
-    String name = p.name;
-    String fname = p.firstname;
-    String email = p.email;
-    String phone = p.phoneNumber;
-    String birthday = p.birthday;
-    String trainer = p.isTrainer ? "true" : "false";
-
-    String data = '{"name":"$name", "firstname":"$fname", "email":"$email", "birthday":"$birthday", "phone":"$phone", "istrainer":$trainer}';
-    return data;
-  }
+  // ---------------------------------------------------------------------------------
+  // persons CRUD
 
   bool addPerson(Person p)
   {
@@ -180,7 +199,7 @@ class DataContext
     req.open("POST", personUri, async: false);
     setRequestHeader(req);
     req.setRequestHeader("Content-Type", "application/json");
-    req.send(personToJson(p));
+    req.send(p.toJson());
 
     if (req.status == 201)
     {
@@ -211,7 +230,7 @@ class DataContext
     req.open("PUT", uri, async: false);
     setRequestHeader(req);
     req.setRequestHeader("Content-Type", "application/json");
-    req.send(personToJson(p));
+    req.send(p.toJson());
 
     if (req.status == 200)
     {
@@ -264,7 +283,7 @@ class DataContext
     HttpRequest.request(personUri,
         method: "GET",
         requestHeaders: {"X-Parse-Application-Id": appId, "X-Parse-REST-API-Key": restKey})
-        .then(onGetPersons);
+        .then(parsePersonResponse);
   }
 
   void loadPersons()
@@ -274,10 +293,10 @@ class DataContext
     setRequestHeader(req);
     req.send();
 
-    onGetPersons(req);
+    parsePersonResponse(req);
   }
 
-  void onGetPersons(HttpRequest request)
+  void parsePersonResponse(HttpRequest request)
   {
     trainers = new ObservableList<Person>();
     children = new ObservableList<Person>();
@@ -306,4 +325,32 @@ class DataContext
     }
   }
 
+  // ---------------------------------------------------------------------------------
+  // login
+
+  bool login(String username, String password)
+  {
+    HttpRequest req = new HttpRequest();
+
+    var uri = userUri + "?" + 'where={"username":"$username", "password":"$password"}';
+
+    req.open("GET", uri, async: false);
+    setRequestHeader(req);
+
+    req.send();
+
+    Map data = JSON.parse(req.responseText);
+    if (data['results'].length == 0)
+    {
+      return false;
+    }
+
+    var item = data['results'][0];
+    String un = item['username'];
+    String role = item['role'];
+
+    user = new User(un, role);
+
+    return true;
+  }
 }

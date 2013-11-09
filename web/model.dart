@@ -7,8 +7,8 @@ library training.web.model;
 import 'package:polymer/polymer.dart';
 import "training_config.dart";
 import "ini_parser.dart";
-import "role.dart";
 import "data_context.dart";
+import 'objects.dart';
 
 final appModel = new AppModel._();
 
@@ -30,7 +30,7 @@ class AppModel extends Observable
 
     data = new DataContext();
 
-    //login("admin", "admin");
+    login("admin", "admin");
   }
 
   bool login(String username, String password)

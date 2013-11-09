@@ -5,7 +5,7 @@
     <span class="success">{{success}}</span>
     <span class="error">{{error}}</span>
     <template if="{{action == 'delete'}}">
-      Really delete training?
+      Really delete training from {{selectedTraining.date}}?
       <button on-click="{{deleteTraining}}">Yes</button>
       <button on-click="{{cancelDelete}}">No</button>
     </template>
@@ -16,7 +16,7 @@
    
     <template if="{{action == 'list'}}">
       <template if="{{editable == true}}">
-        <table>
+        <table border="1">
           <tr>
             <td>Date</td>
             <td>Trainers</td>
@@ -26,28 +26,28 @@
           </tr>
           <template repeat="{{training in trainings}}">
             <tr>
-              <td>{{training.date}}</td>
+              <td>{{training.getDate()}}</td>
               <td>
                 <template repeat="{{trainer in training.trainers}}">
-                  {{trainer}} 
+                  {{trainer}} <br>
                 </template>
               </td>
               <td>
                 <template repeat="{{children in training.children}}">
-                  {{children}} 
+                  {{children}} <br>
                 </template>
               </td>
               <td>{{training.notes}}</td>
               <td>
                 <button on-click="{{editTraining}}" training-id="{{training.id}}">Edit</button>
-                <button on-click="{{showDeleteTraining}}" person-id="{{training.id}}">Delete</button>
+                <button on-click="{{showDeleteTraining}}" training-id="{{training.id}}">Delete</button>
               </td>    
             </tr>
           </template>
         </table>
       </template>
       <template if="{{editable == false}}">
-        <table>
+        <table border="1">
           <tr>
             <td>Date</td>
             <td>Trainers</td>
@@ -56,15 +56,15 @@
           </tr>
           <template repeat="{{training in trainings}}">
             <tr>
-              <td>{{training.date}}</td>
+              <td>{{training.getDate()}}</td>
               <td>
                 <template repeat="{{trainer in training.trainers}}">
-                  {{trainer}} 
+                  {{trainer}} <br>
                 </template>
               </td>
               <td>
                 <template repeat="{{children in training.children}}">
-                  {{children}} 
+                  {{children}} <br>
                 </template>
               </td>
               <td>{{training.notes}}</td>

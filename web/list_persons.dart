@@ -4,6 +4,7 @@ import 'dart:html';
 import 'package:polymer/polymer.dart';
 import 'model.dart';
 import "data_context.dart";
+import 'objects.dart';
 
 @CustomTag('list-persons-control')
 class ListPersonsControl extends PolymerElement
@@ -11,7 +12,7 @@ class ListPersonsControl extends PolymerElement
   @observable AppModel app;
   @observable Person selectedPerson;
   @observable String action = "list";
-  
+
   @observable String error = "";
   @observable String success = "";
 
@@ -58,7 +59,7 @@ class ListPersonsControl extends PolymerElement
     {
       error = "Failed to delete person!";
     }
-    
+
     action = "list";
   }
 

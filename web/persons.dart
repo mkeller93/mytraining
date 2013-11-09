@@ -4,6 +4,7 @@ import 'dart:html';
 import 'package:polymer/polymer.dart';
 import 'model.dart';
 import 'data_context.dart';
+import 'objects.dart';
 
 @CustomTag('persons-view')
 class PersonsView extends PolymerElement
@@ -41,15 +42,15 @@ class PersonsView extends PolymerElement
   {
     if(canceled == false)
     {
-      
+
       if (app.data.addPerson(newPerson) == true)
       {
-        success = "Successfully added $newPerson";  
+        success = "Successfully added $newPerson";
       }
       else
       {
         error = "Failed to add person!";
-      }            
+      }
     }
 
     action = "list";

@@ -4,6 +4,7 @@ import 'dart:html';
 import "dart:async";
 import 'package:polymer/polymer.dart';
 import 'model.dart';
+import 'objects.dart';
 
 @CustomTag('add-person-control')
 class AddPersonControl extends PolymerElement
