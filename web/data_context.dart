@@ -53,6 +53,8 @@ class DataContext
     String data = '{"person_id":"$p_id", "training_id":"$t_id"}';
 
     req.send(data);
+    
+    print("Add person: status" + req.status.toString());
 
     return (req.status == 201);
   }
@@ -81,7 +83,7 @@ class DataContext
 
       for(Person p in t.children)
       {
-        if (addPersonInTraining(p, t))
+        if (addPersonInTraining(p, t) == false)
         {
           return false;
         }
