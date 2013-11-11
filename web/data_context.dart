@@ -121,7 +121,7 @@ class DataContext
       {
         // get date from ISO string
         date = date.substring(20, 30);
-        t.date = DateTime.parse(date);
+        t.setDate(DateTime.parse(date));
       }
 
       HttpRequest r = new HttpRequest();

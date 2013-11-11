@@ -54,7 +54,8 @@ class Person extends Observable
 
 class Training extends Observable
 {
-  @observable DateTime date;
+  @observable String date = "";
+  @observable DateTime realDate;
   @observable String notes = "";
   @observable String id = "";
 
@@ -67,28 +68,49 @@ class Training extends Observable
     children = new ObservableList<Person>();
   }
 
-  String getDate()
+  DateTime getIsoDate()
   {
-    if (date != null)
-    {
-      String y = date.year.toString();
-      String m = date.month.toString();
-      String d = date.day.toString();
+    String year = date.substring(6, 10);
+    String month = date.substring(3, 5);
+    String day = date.substring(0, 2);
 
-      return "$d.$m.$y";
+    return DateTime.parse("$year-$month-$day");
+  }
+  
+  void setDate(DateTime date)
+  {
+    realDate = date;
+    
+    if (realDate != null)
+    {
+      String y = realDate.year.toString();
+      String m = realDate.month.toString();
+      String d = realDate.day.toString();
+
+      if(realDate.month < 10)
+        m = "0" + m;
+      
+      if(realDate.day < 10)
+        d = "0" + d;
+      
+      
+      this.date = "$d.$m.$y";
+      return;
     }
 
-    return "NA";
+    this.date = "";
   }
 
   String toJson()
   {
-    String d = date.toString();
+    String d = getIsoDate().toString();
     d = d.replaceAll(" ", "T");
     d += "Z";
     String data = '{"notes":"$notes", "date":{"__type":"Date", "iso":"$d"}}';
     return data;
   }
+  
+  String toString() => "Training from $date";
 }
 
 

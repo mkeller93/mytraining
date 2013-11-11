@@ -14,8 +14,6 @@ class AddTrainingControl extends PolymerElement
   @observable ObservableList<String> errors;
   @observable String success;
 
-  @observable String date;
-
   @published Training training;
   Training originalTraining;
 
@@ -97,16 +95,7 @@ class AddTrainingControl extends PolymerElement
     }
 
     _dispatchFinishEvent(this, true);
-  }
-
-  DateTime toIsoDate(String date)
-  {
-    String year = date.substring(6, 10);
-    String month = date.substring(3, 5);
-    String day = date.substring(0, 2);
-
-    return DateTime.parse("$year-$month-$day");
-  }
+  }  
 
   void save(Event e)
   {
@@ -114,7 +103,7 @@ class AddTrainingControl extends PolymerElement
 
     if (validateValues() == true)
     {
-      training.date = toIsoDate(date);
+      training.realDate = training.getIsoDate();
       _dispatchFinishEvent(this, false);
     }
   }
@@ -123,7 +112,7 @@ class AddTrainingControl extends PolymerElement
   {
     errors.clear();
 
-    if (date == "" || date == null)
+    if (training.date == "" || training.date == null)
     {
       errors.add("date");
     }
@@ -131,7 +120,7 @@ class AddTrainingControl extends PolymerElement
     {
       try
       {
-        toIsoDate(date);
+        training.getIsoDate();
       }
       on ArgumentError
       {
