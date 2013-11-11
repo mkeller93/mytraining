@@ -5,6 +5,15 @@ import 'package:json/json.dart' as JSON;
 import 'dart:html';
 import 'objects.dart';
 
+class PersonInTraining
+{
+  String id = "";
+  String personId = "";
+  String trainingId = "";
+  
+  PersonInTraining(this.id, this.personId, this.trainingId);
+}
+
 class DataContext
 {
   String restKey ="EVOn0GZd0UnIiwFyMHbQP0rSQrNMpiR1zdllQLCx";
@@ -23,6 +32,8 @@ class DataContext
   @observable ObservableList<Training> trainings;
 
   User user;
+  
+  List<PersonInTraining> personInTrainingList = new List<PersonInTraining>();
 
   DataContext()
   {
@@ -52,11 +63,48 @@ class DataContext
     String t_id = t.id;
     String data = '{"person_id":"$p_id", "training_id":"$t_id"}';
 
-    req.send(data);
+    req.send(data);    
     
-    print("Add person: status" + req.status.toString());
+    if (req.status == 201)
+    {
+      Map response = JSON.parse(req.responseText);
+      String id = response['objectId'];
+      
+      personInTrainingList.add(new PersonInTraining(id, p_id, t_id));
+    }
+  }
+  
+  bool hasPersonInTraining(Person p, Training t)
+  {
+    var list = personInTrainingList.where((pit) => pit.personId == p.id && pit.trainingId == t.id);
+    return (list.length > 0);
+  }
+  
+  bool deletePersonInTraining(Person p, Training t)
+  {
+    if (hasPersonInTraining(p, t) == true)
+    {
+      PersonInTraining pit = personInTrainingList.where((o) => o.personId == p.id && o.trainingId == t.id).first;
+      
+      HttpRequest req = new HttpRequest();
 
-    return (req.status == 201);
+      String uri = personInTraingUri + "/" + t.id;
+
+      req.open("DELETE", uri, async: false);
+      setRequestHeader(req);
+      req.send();
+
+      if (req.status == 200)
+      {
+        personInTrainingList.remove(pit);
+        return true;
+      }
+
+      return false;
+      
+    }
+    
+    return true;
   }
 
   bool addTraining(Training t)
@@ -124,6 +172,8 @@ class DataContext
         t.setDate(DateTime.parse(date));
       }
 
+      personInTrainingList.clear();
+      
       HttpRequest r = new HttpRequest();
       String uri = personInTraingUri + '?where={"training_id":"$id"}';
       r.open("GET", uri, async: false);
@@ -134,6 +184,10 @@ class DataContext
       for (Map entry in entries['results'])
       {
         String personId = entry['person_id'];
+        String trainingId = entry['training_id'];
+        String id = entry['objectId'];
+        
+        personInTrainingList.add(new PersonInTraining(id, personId, trainingId));
 
         var count = trainers.where((t) => t.id == personId).length;
         if (count > 0)
@@ -167,6 +221,26 @@ class DataContext
 
     if (req.status == 200)
     {
+      for (Person p in trainers)
+      {
+        if (t.trainers.contains(p) == false)
+        {
+          if (deletePersonInTraining(p, t) == false)
+          {
+            return false;
+          }
+        }
+      }
+      for (Person p in children)
+      {
+        if (t.children.contains(p) == false)
+        {
+          if (deletePersonInTraining(p, t) == false)
+          {
+            return false;
+          }
+        }
+      }
       return true;
     }
 
