@@ -20,6 +20,7 @@ class TrainingApp extends PolymerElement
 
   void logout(Event e, var detail, var target)
   {
+    window.location.hash = "";
     app.logout();
   }
 

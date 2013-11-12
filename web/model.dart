@@ -30,7 +30,7 @@ class AppModel extends Observable
 
     data = new DataContext();
 
-    login("admin", "admin");
+    //login("admin", "admin");
   }
 
   bool login(String username, String password)
