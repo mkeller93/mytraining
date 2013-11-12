@@ -21,10 +21,11 @@ class Role
 
 class User extends Observable
 {
+  @observable String id = "";
   @observable String username = "";
   @observable String role = "";
 
-  User(this.username, this.role);
+  User(this.id, this.username, this.role);
 }
 
 class Person extends Observable
@@ -76,11 +77,11 @@ class Training extends Observable
 
     return DateTime.parse("$year-$month-$day");
   }
-  
+
   void setDate(DateTime date)
   {
     realDate = date;
-    
+
     if (realDate != null)
     {
       String y = realDate.year.toString();
@@ -89,11 +90,11 @@ class Training extends Observable
 
       if(realDate.month < 10)
         m = "0" + m;
-      
+
       if(realDate.day < 10)
         d = "0" + d;
-      
-      
+
+
       this.date = "$d.$m.$y";
       return;
     }
@@ -107,15 +108,15 @@ class Training extends Observable
     String d = getIsoDate().toString();
     d = d.replaceAll(" ", "T");
     d += "Z";
-    
+
     // fix notes
     String notesUpload = notes.replaceAll("\n", "\\n");
-    
+
     String data = '{"notes":"$notesUpload", "date":{"__type":"Date", "iso":"$d"}}';
 
     return data;
   }
-  
+
   String toString() => "Training from $date";
 }
 

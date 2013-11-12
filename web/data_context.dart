@@ -10,7 +10,7 @@ class PersonInTraining
   String id = "";
   String personId = "";
   String trainingId = "";
-  
+
   PersonInTraining(this.id, this.personId, this.trainingId);
 }
 
@@ -32,7 +32,7 @@ class DataContext
   @observable ObservableList<Training> trainings;
 
   User user;
-  
+
   List<PersonInTraining> personInTrainingList = new List<PersonInTraining>();
 
   DataContext()
@@ -63,29 +63,29 @@ class DataContext
     String t_id = t.id;
     String data = '{"person_id":"$p_id", "training_id":"$t_id"}';
 
-    req.send(data);    
-    
+    req.send(data);
+
     if (req.status == 201)
     {
       Map response = JSON.parse(req.responseText);
       String id = response['objectId'];
-      
+
       personInTrainingList.add(new PersonInTraining(id, p_id, t_id));
     }
   }
-  
+
   bool hasPersonInTraining(Person p, Training t)
   {
     var list = personInTrainingList.where((pit) => pit.personId == p.id && pit.trainingId == t.id);
     return (list.length > 0);
   }
-  
+
   bool deletePersonInTraining(Person p, Training t)
   {
     if (hasPersonInTraining(p, t) == true)
     {
       PersonInTraining pit = personInTrainingList.where((o) => o.personId == p.id && o.trainingId == t.id).first;
-      
+
       HttpRequest req = new HttpRequest();
 
       String uri = personInTraingUri + "/" + pit.id;
@@ -101,9 +101,9 @@ class DataContext
       }
 
       return false;
-      
+
     }
-    
+
     return true;
   }
 
@@ -174,7 +174,7 @@ class DataContext
       }
 
       personInTrainingList.clear();
-      
+
       HttpRequest r = new HttpRequest();
       String uri = personInTraingUri + '?where={"training_id":"$id"}';
       r.open("GET", uri, async: false);
@@ -187,7 +187,7 @@ class DataContext
         String personId = entry['person_id'];
         String trainingId = entry['training_id'];
         String id = entry['objectId'];
-        
+
         personInTrainingList.add(new PersonInTraining(id, personId, trainingId));
 
         var count = trainers.where((t) => t.id == personId).length;
@@ -441,8 +441,9 @@ class DataContext
     var item = data['results'][0];
     String un = item['username'];
     String role = item['role'];
+    String id = item['objectId'];
 
-    user = new User(un, role);
+    user = new User(id, un, role);
 
     return true;
   }
