@@ -12,11 +12,11 @@
     <span class="success">{{success}}</span>
     <template if="{{action == 'list'}}">
       <h1>Trainings</h1>
-      <list-trainings-control trainings="{{app.data.trainings}}"></list-trainings-control>
+      <list-trainings-control></list-trainings-control>
     </template> 
     <template if="{{action == 'edit'}}">
       <h1>Edit Trainings</h1>
-      <list-trainings-control trainings="{{app.data.trainings}}" editable="true"></list-trainings-control>
+      <list-trainings-control editable="true"></list-trainings-control>
     </template>
     <template if="{{action == 'add'}}">
       <h2>Add new training</h2>

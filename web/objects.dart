@@ -53,6 +53,18 @@ class Person extends Observable
   }
 }
 
+class DateConverter
+{
+  static DateTime getIsoDate(String date)
+  {
+    String year = date.substring(6, 10);
+    String month = date.substring(3, 5);
+    String day = date.substring(0, 2);
+
+    return DateTime.parse("$year-$month-$day");
+  }
+}
+
 class Training extends Observable
 {
   @observable String date = "";
@@ -67,15 +79,6 @@ class Training extends Observable
   {
     trainers = new ObservableList<Person>();
     children = new ObservableList<Person>();
-  }
-
-  DateTime getIsoDate()
-  {
-    String year = date.substring(6, 10);
-    String month = date.substring(3, 5);
-    String day = date.substring(0, 2);
-
-    return DateTime.parse("$year-$month-$day");
   }
 
   void setDate(DateTime date)
@@ -94,7 +97,6 @@ class Training extends Observable
       if(realDate.day < 10)
         d = "0" + d;
 
-
       this.date = "$d.$m.$y";
       return;
     }
@@ -105,7 +107,7 @@ class Training extends Observable
   String toJson()
   {
     // fix date
-    String d = getIsoDate().toString();
+    String d = DateConverter.getIsoDate(date).toString();
     d = d.replaceAll(" ", "T");
     d += "Z";
 

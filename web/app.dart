@@ -15,7 +15,7 @@ class TrainingApp extends PolymerElement
   {
     app = appModel;
     windowLocation.changes.listen(_location_changed);
-    //window.location.hash = "#trainings";
+    _location_changed(null);
   }
 
   void logout(Event e, var detail, var target)
@@ -33,6 +33,10 @@ class TrainingApp extends PolymerElement
       {
         app.content = hash.substring(1, hash.length);
       }
+    }
+    else
+    {
+      app.content = "home";
     }
   }
 }

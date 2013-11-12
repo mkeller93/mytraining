@@ -14,7 +14,14 @@
       <add-training-control on-finish="{{editFinished}}" training="{{selectedTraining}}"></add-training-control>
     </template>
    
-    <template if="{{action == 'list'}}">
+    <template if="{{action == 'list'}}">  
+      <input type="text" value="{{minDate}}" placeholder="dd.mm.yyyy">
+      <input type="text" value="{{maxDate}}" placeholder="dd.mm.yyyy">
+      <button class="green_button" on-click="{{search}}">Search</button>
+      <button class="orange_button" on-click="{{reset}}">Reset</button>
+      
+      <br><br>
+      
       <template if="{{editable == true}}">
         <table>
           <thead>
@@ -75,7 +82,24 @@
             </tr>
           </tbody>   
         </table>
-      </template>
+      
+        <br><br>
+      
+        <table>
+          <thead>
+            <tr class="table_header">
+              <th>Name</th>
+              <th>Total Trainings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr template repeat="{{trainer in app.data.trainers}}">
+              <td>{{trainer}}</td>
+              <td>{{totalTrainings[trainer.id]}}</td>
+              </tr> 
+          </tbody>
+        </table>
+      </template>      
    </template>
   </div>
 </template>

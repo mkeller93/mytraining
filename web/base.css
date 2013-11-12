@@ -46,6 +46,7 @@ body
 
 #footer
 {
+  font-size: 13px;
   float: right;
   width: 99%;
   height: 10%;
@@ -64,20 +65,6 @@ body
   padding-left: 1%;
   padding-top: 1%;
   padding-bottom: 1%;
-}
-
-/* *********************************
-	Error/success messages
-*/
-
-.error
-{
-  color: red;
-}
-
-.success
-{
-  color: green;
 }
 
 /* *********************************
@@ -186,6 +173,16 @@ input[type=text]:hover
   border: 1px solid #CBCCC2;
 }
 
+input[type=password]
+{
+  border: 1px solid #DCDECE;
+}
+
+input[type=password]:hover
+{
+  border: 1px solid #CBCCC2;
+}
+
 textarea
 {
   border: 1px solid #DCDECE;
@@ -194,4 +191,24 @@ textarea
 textarea:hover
 {
   border: 1px solid #CBCCC2;
+}
+
+/* *********************************
+	Output
+*/
+
+.error
+{
+  color: red;
+}
+
+.success
+{
+  color: green;
+}
+
+.title
+{
+  font-size: 35px;
+  font-weight: bold;
 }

@@ -22,7 +22,7 @@ class AppModel extends Observable
   ObservableList<Navigation> navigations = new ObservableList<Navigation>();
   @observable ObservableList<NavigationItem> navigation = new ObservableList<NavigationItem>();
 
-  DataContext data;
+  @observable DataContext data;
 
   AppModel._()
   {

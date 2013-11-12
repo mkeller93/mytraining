@@ -95,7 +95,7 @@ class AddTrainingControl extends PolymerElement
     }
 
     _dispatchFinishEvent(this, true);
-  }  
+  }
 
   void save(Event e)
   {
@@ -103,7 +103,7 @@ class AddTrainingControl extends PolymerElement
 
     if (validateValues() == true)
     {
-      training.realDate = training.getIsoDate();
+      training.realDate = DateConverter.getIsoDate(training.date);
       _dispatchFinishEvent(this, false);
     }
   }
@@ -120,7 +120,7 @@ class AddTrainingControl extends PolymerElement
     {
       try
       {
-        training.getIsoDate();
+        DateConverter.getIsoDate(training.date);
       }
       on ArgumentError
       {
