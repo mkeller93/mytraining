@@ -19,7 +19,7 @@
               <label ><input type="checkbox" on-click="{{trainerSelected}}" trainer-id="{{trainer.id}}" checked="{{training.trainers.contains(trainer)}}">{{trainer}}</label> <br>
             </template>
            </td>
-        </tr>
+        </tr>        
         <tr>
           <td>Children</td>          
           <td>
@@ -42,8 +42,8 @@
          </td>
         </tr>
         <tr>
-         <td><button type="submit" on-click="{{save}}">Save</button></td>
-         <td><button type="submit" on-click="{{cancel}}">Cancel</button></td>
+         <td><button class="green_button" type="submit" on-click="{{save}}">Save</button></td>
+         <td><button class="red_button" type="submit" on-click="{{cancel}}">Cancel</button></td>
         </tr>
        </table>
        </form>

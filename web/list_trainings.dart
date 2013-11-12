@@ -50,10 +50,12 @@ class ListTrainingsControl extends PolymerElement
   {
     if (app.data.deleteTraining(selectedTraining))
     {
+      error = "";
       success = "Successfully deleted training from " + selectedTraining.date.toString();
     }
     else
     {
+      success = "";
       error = "Failed to delete training from " + selectedTraining.getDate();
     }
 
@@ -71,10 +73,12 @@ class ListTrainingsControl extends PolymerElement
     {
       if (app.data.updateTraining(selectedTraining) == true)
       {
+        error = "";
         success = "Successfully updated training!";
       }
       else
       {
+        success = "";
         error = "Failed to update training!";
       }
     }

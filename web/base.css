@@ -3,6 +3,10 @@ body
   background-color: #EFF2DC;
 }
 
+/* *********************************
+	Main layout
+*/
+
 #navigation 
 {
   float: left;
@@ -12,15 +16,22 @@ body
   padding-top: 1%;
   padding-bottom: 1%;
 }
+
 #navigation a
 {
   color: black;
   text-decoration: none;
 }
+
 #navigation a:hover
 {
   color: grey;
   text-decoration: blink;
+}
+
+.username
+{
+  font-style: italic;
 }
 
 #header
@@ -30,6 +41,7 @@ body
   padding-left: 1%;
   padding-top: 1%;
   padding-bottom: 1%;
+  background-color: #DCDECE;
 }
 
 #footer
@@ -40,6 +52,7 @@ body
   padding-left: 1%;
   padding-top: 1%;
   padding-bottom: 1%;
+  background-color: #DCDECE;
 }
 
 #content
@@ -51,6 +64,10 @@ body
   padding-bottom: 1%;
 }
 
+/* *********************************
+	Error/success messages
+*/
+
 .error
 {
   color: red;
@@ -59,4 +76,120 @@ body
 .success
 {
   color: green;
+}
+
+/* *********************************
+	Buttons
+*/
+
+.navigation
+{
+  font-weight: bold;
+  border: none;
+  background-color: #DCDECE;
+  padding: 8px;
+}
+.navigation:hover
+{
+  background-color: #CBCCC2;
+}
+
+.green_button
+{
+  font-weight: bold;
+  border: none;
+  background-color: #B0E8A2;
+  padding: 8px;
+}
+
+.green_button:hover
+{
+  background-color: #9ADB8A;
+}
+
+.red_button
+{
+  font-weight: bold;
+  border: none;
+  background-color: #F54C4C;
+  padding: 8px;
+}
+
+.red_button:hover
+{
+  background-color: #FA2525;
+}
+
+.orange_button
+{
+  font-weight: bold;
+  border: none;
+  background-color: #F5C367;
+  padding: 8px;
+}
+
+.orange_button:hover
+{
+  background-color: #F2B84B;
+}
+
+.logout
+{
+  font-weight: bold;
+  border: none;
+  background-color: #DCDECE;
+  padding: 5px;
+}
+
+.logout:hover
+{
+  background-color: #F25076;
+}
+
+.login
+{
+  font-weight: bold;
+  border: none;
+  background-color: #B0E8A2;
+  padding: 5px;
+}
+
+.login:hover
+{
+  background-color: #9ADB8A;
+}
+
+
+/* *********************************
+	Table
+*/
+
+.table_header
+{
+  font-weight: bold;
+  background-color: #DCDECE;
+}
+
+/* *********************************
+	Input
+*/
+
+input[type=text]
+{
+  border: 1px solid #DCDECE;
+}
+
+input[type=text]:hover
+{
+  border: 1px solid #CBCCC2;
+}
+
+textarea
+{
+  border: 1px solid #DCDECE;
+}
+
+textarea:hover
+{
+  border: 1px solid #CBCCC2;
 }

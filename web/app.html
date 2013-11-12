@@ -18,8 +18,8 @@ BSD-style license that can be found in the LICENSE file.
     <template if="{{app.currentUser != null}}">
       <br>
       <span>    
-        {{app.currentUser.username}}
-        <button on-click="{{logout}}">Logout</button>
+        <span class="username">{{app.currentUser.username}}</span>
+        <button class="logout" on-click="{{logout}}">Logout</button>
       </span>
     </template>
   </div>  
@@ -34,7 +34,7 @@ BSD-style license that can be found in the LICENSE file.
       <template if="{{app.content == 'persons'}}">
         <persons-view></persons-view>
       </template>
-      <template if="{{app.content == ''}}">
+      <template if="{{app.content == 'home'}}">
         <h1>Welcome to Training Coordinator</h1>
       </template>
     </template>

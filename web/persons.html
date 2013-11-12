@@ -9,7 +9,7 @@ BSD-style license that can be found in the LICENSE file.
 <template>
   <div id="menu">
    <template repeat="{{item in menuItems}}">
-    <button on-click="{{updateView}}" view="{{item.target}}">{{item.name}}</button>
+    <button class="navigation" on-click="{{updateView}}" view="{{item.target}}">{{item.name}}</button>
    </template>
   </div>
   <div id="main-content">

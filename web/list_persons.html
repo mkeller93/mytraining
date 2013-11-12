@@ -11,8 +11,8 @@ BSD-style license that can be found in the LICENSE file.
     <span class="error">{{error}}</span>
     <template if="{{action == 'delete'}}">
       Really delete {{selectedPerson.firstname}} {{selectedPerson.name}}?
-      <button on-click="{{deletePerson}}">Yes</button>
-      <button on-click="{{cancelDelete}}">No</button>
+      <button class="red_button" on-click="{{deletePerson}}">Yes</button>
+      <button class="green_button" on-click="{{cancelDelete}}">No</button>
     </template>
    
     <template if="{{action == 'edit'}}">
@@ -22,13 +22,13 @@ BSD-style license that can be found in the LICENSE file.
     <template if="{{action == 'list'}}">
       <template if="{{editable == true}}">
         <table>
-          <tr>
-            <td>Name</td>
-            <td>Birthday</td>
-            <td>Phone Number</td>
-            <td>Email</td>
-            <td>Total Trainings</td>
-            <td>Action</td>
+          <tr class="table_header">
+            <td style="width: 15%;">Name</td>
+            <td style="width: 15%;">Birthday</td>
+            <td style="width: 15%;">Phone Number</td>
+            <td style="width: 15%;">Email</td>
+            <td style="width: 15%;">Total Trainings</td>
+            <td style="width: 15%;">Action </td>
           </tr>
           <template repeat="{{person in persons}}">
             <tr>
@@ -38,8 +38,8 @@ BSD-style license that can be found in the LICENSE file.
               <td>{{person.email}}</td>
               <td>NA yet</td>
               <td>
-                <button on-click="{{editPerson}}" person-id="{{person.id}}">Edit</button>
-                <button on-click="{{showDeletePerson}}" person-id="{{person.id}}">Delete</button>
+                <button class="orange_button" on-click="{{editPerson}}" person-id="{{person.id}}">Edit</button>
+                <button class="red_button" on-click="{{showDeletePerson}}" person-id="{{person.id}}">Delete</button>
               </td>    
             </tr>
           </template>
@@ -47,12 +47,12 @@ BSD-style license that can be found in the LICENSE file.
       </template>
       <template if="{{editable == false}}">
         <table>
-          <tr>
-            <td>Name</td>
-            <td>Birthday</td>
-            <td>Phone Number</td>
-            <td>Email</td>
-            <td>Total Trainings</td>
+          <tr class="table_header">
+            <td style="width: 18%;">Name</td>
+            <td style="width: 18%;">Birthday</td>
+            <td style="width: 18%;">Phone Number</td>
+            <td style="width: 18%;">Email</td>
+            <td style="width: 18%;">Total Trainings</td>
           </tr>
           <template repeat="{{person in persons}}">
             <tr>

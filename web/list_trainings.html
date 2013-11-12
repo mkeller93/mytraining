@@ -6,8 +6,8 @@
     <span class="error">{{error}}</span>
     <template if="{{action == 'delete'}}">
       Really delete training from {{selectedTraining.date}}?
-      <button on-click="{{deleteTraining}}">Yes</button>
-      <button on-click="{{cancelDelete}}">No</button>
+      <button class="red_button" on-click="{{deleteTraining}}">Yes</button>
+      <button class="green_button" on-click="{{cancelDelete}}">No</button>
     </template>
    
     <template if="{{action == 'edit'}}">
@@ -16,13 +16,13 @@
    
     <template if="{{action == 'list'}}">
       <template if="{{editable == true}}">
-        <table border="1">
-          <tr>
-            <td>Date</td>
-            <td>Trainers</td>
-            <td>Children</td>
-            <td>Notes</td>
-            <td>Action</td>
+        <table>
+          <tr class="table_header">
+            <td style="width: 18%;">Date</td>
+            <td style="width: 18%;">Trainers</td>
+            <td style="width: 18%;">Children</td>
+            <td style="width: 18%;">Notes</td>
+            <td style="width: 18%;">Action</td>
           </tr>
           <template repeat="{{training in trainings}}">
             <tr>
@@ -39,20 +39,20 @@
               </td>
               <td>{{training.notes}}</td>
               <td>
-                <button on-click="{{editTraining}}" training-id="{{training.id}}">Edit</button>
-                <button on-click="{{showDeleteTraining}}" training-id="{{training.id}}">Delete</button>
+                <button class="orange_button" on-click="{{editTraining}}" training-id="{{training.id}}">Edit</button>
+                <button class="red_button" on-click="{{showDeleteTraining}}" training-id="{{training.id}}">Delete</button>
               </td>    
             </tr>
           </template>
         </table>
       </template>
       <template if="{{editable == false}}">
-        <table border="1">
-          <tr>
-            <td>Date</td>
-            <td>Trainers</td>
-            <td>Children</td>
-            <td>Notes</td>
+        <table>
+          <tr class="table_header">
+            <td style="width: 22%;">Date</td>
+            <td style="width: 22%;">Trainers</td>
+            <td style="width: 22%;">Children</td>
+            <td style="width: 22%;">Notes</td>
           </tr>
           <template repeat="{{training in trainings}}">
             <tr>

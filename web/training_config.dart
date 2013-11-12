@@ -4,9 +4,9 @@ class TrainingConfig
 {
   static final String config =
       "[main]/" +
-      "admin=Persons:#persons;Trainings:#trainings;Users:#users/" +
-      "user=Persons:#persons;Trainings:#trainings/" +
-      "viewer=Persons:#persons;Trainings:#trainings/" +
+      "admin=Home:#home;Persons:#persons;Trainings:#trainings;Users:#users/" +
+      "user=Home:#home;Persons:#persons;Trainings:#trainings/" +
+      "viewer=Home:#home;Persons:#persons;Trainings:#trainings/" +
       "[persons]/" +
       "admin=List:list;Add person:add;Edit person:edit;/" +
       "user=List:list;/" +

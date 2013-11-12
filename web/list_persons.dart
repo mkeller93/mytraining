@@ -53,10 +53,12 @@ class ListPersonsControl extends PolymerElement
   {
     if (app.data.deletePerson(selectedPerson))
     {
+      error = "";
       success = "Successfully deleted person!";
     }
     else
     {
+      success = "";
       error = "Failed to delete person!";
     }
 
@@ -74,10 +76,12 @@ class ListPersonsControl extends PolymerElement
     {
       if (app.data.updatePerson(selectedPerson) == true)
       {
+        error = "";
         success = "Successfully updated person!";
       }
       else
       {
+        success = "";
         error = "Failed to update person!";
       }
     }

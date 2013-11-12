@@ -88,7 +88,7 @@ class DataContext
       
       HttpRequest req = new HttpRequest();
 
-      String uri = personInTraingUri + "/" + t.id;
+      String uri = personInTraingUri + "/" + pit.id;
 
       req.open("DELETE", uri, async: false);
       setRequestHeader(req);
@@ -161,7 +161,8 @@ class DataContext
 
       Training t = new Training();
       t.id = id;
-      t.notes = item['notes'];
+      String notes = item['notes'];
+      t.notes = notes.replaceAll("\\n", "\n");
 
       String date = item['date'].toString();
 
@@ -225,20 +226,14 @@ class DataContext
       {
         if (t.trainers.contains(p) == false)
         {
-          if (deletePersonInTraining(p, t) == false)
-          {
-            return false;
-          }
+          deletePersonInTraining(p, t);
         }
       }
       for (Person p in children)
       {
         if (t.children.contains(p) == false)
         {
-          if (deletePersonInTraining(p, t) == false)
-          {
-            return false;
-          }
+          deletePersonInTraining(p, t);
         }
       }
       return true;
@@ -259,6 +254,27 @@ class DataContext
 
     if (req.status == 200)
     {
+      for (Person p in trainers)
+      {
+        if (t.trainers.contains(p) == true)
+        {
+          if (deletePersonInTraining(p, t) == false)
+          {
+            return false;
+          }
+        }
+      }
+      for (Person p in children)
+      {
+        if (t.children.contains(p) == true)
+        {
+          if (deletePersonInTraining(p, t) == false)
+          {
+            return false;
+          }
+        }
+      }
+
       trainings.remove(t);
       return true;
     }

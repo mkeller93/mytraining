@@ -47,7 +47,7 @@ class Person extends Observable
   {
     String trainer = isTrainer ? "true" : "false";
 
-    String data = '{"name":"$name", "firstname":"$name", "email":"$email", "birthday":"$birthday", "phone":"$phoneNumber", "istrainer":$trainer}';
+    String data = '{"name":"$name", "firstname":"$firstname", "email":"$email", "birthday":"$birthday", "phone":"$phoneNumber", "istrainer":$trainer}';
     return data;
   }
 }
@@ -103,10 +103,16 @@ class Training extends Observable
 
   String toJson()
   {
+    // fix date
     String d = getIsoDate().toString();
     d = d.replaceAll(" ", "T");
     d += "Z";
-    String data = '{"notes":"$notes", "date":{"__type":"Date", "iso":"$d"}}';
+    
+    // fix notes
+    String notesUpload = notes.replaceAll("\n", "\\n");
+    
+    String data = '{"notes":"$notesUpload", "date":{"__type":"Date", "iso":"$d"}}';
+
     return data;
   }
   
