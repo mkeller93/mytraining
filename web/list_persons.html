@@ -22,16 +22,18 @@ BSD-style license that can be found in the LICENSE file.
     <template if="{{action == 'list'}}">
       <template if="{{editable == true}}">
         <table>
-          <tr class="table_header">
-            <td style="width: 15%;">Name</td>
-            <td style="width: 15%;">Birthday</td>
-            <td style="width: 15%;">Phone Number</td>
-            <td style="width: 15%;">Email</td>
-            <td style="width: 15%;">Total Trainings</td>
-            <td style="width: 15%;">Action </td>
-          </tr>
-          <template repeat="{{person in persons}}">
-            <tr>
+          <thead>
+            <tr class="table_header">
+              <th style="width: 15%;">Name</th>
+              <th style="width: 15%;">Birthday</th>
+              <th style="width: 15%;">Phone Number</th>
+              <th style="width: 15%;">Email</th>
+              <th style="width: 15%;">Total Trainings</th>
+              <th style="width: 15%;">Action </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr template repeat="{{person in persons}}">
               <td>{{person.firstname}} {{person.name}}</td>
               <td>{{person.birthday}}</td>
               <td>{{person.phoneNumber}}</td>
@@ -42,27 +44,29 @@ BSD-style license that can be found in the LICENSE file.
                 <button class="red_button" on-click="{{showDeletePerson}}" person-id="{{person.id}}">Delete</button>
               </td>    
             </tr>
-          </template>
+          </tbody>
         </table>
       </template>
       <template if="{{editable == false}}">
         <table>
-          <tr class="table_header">
-            <td style="width: 18%;">Name</td>
-            <td style="width: 18%;">Birthday</td>
-            <td style="width: 18%;">Phone Number</td>
-            <td style="width: 18%;">Email</td>
-            <td style="width: 18%;">Total Trainings</td>
-          </tr>
-          <template repeat="{{person in persons}}">
-            <tr>
+          <thead>
+            <tr class="table_header">
+              <th style="width: 18%;">Name</th>
+              <th style="width: 18%;">Birthday</th>
+              <th style="width: 18%;">Phone Number</th>
+              <th style="width: 18%;">Email</th>
+              <th style="width: 18%;">Total Trainings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr template repeat="{{person in persons}}">
               <td>{{person.firstname}} {{person.name}}</td>
               <td>{{person.birthday}}</td>
               <td>{{person.phoneNumber}}</td>
               <td>{{person.email}}</td>
               <td>NA yet</td>   
             </tr>
-          </template>
+          </tbody>
         </table>
       </template>
    </template>

@@ -56,7 +56,7 @@ class ListTrainingsControl extends PolymerElement
     else
     {
       success = "";
-      error = "Failed to delete training from " + selectedTraining.getDate();
+      error = "Failed to delete training from " + selectedTraining.date;
     }
 
     action = "list";

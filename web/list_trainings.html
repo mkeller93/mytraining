@@ -1,4 +1,4 @@
-<!-- <link rel="import" href="add_training.html">-->
+<link rel="import" href="add_training.html">
 <polymer-element name="list-trainings-control">
 <template>
   <div id="main-content">
@@ -17,15 +17,17 @@
     <template if="{{action == 'list'}}">
       <template if="{{editable == true}}">
         <table>
-          <tr class="table_header">
-            <td style="width: 18%;">Date</td>
-            <td style="width: 18%;">Trainers</td>
-            <td style="width: 18%;">Children</td>
-            <td style="width: 18%;">Notes</td>
-            <td style="width: 18%;">Action</td>
-          </tr>
-          <template repeat="{{training in trainings}}">
-            <tr>
+          <thead>
+            <tr class="table_header">
+              <th style="width: 18%;">Date</th>
+              <th style="width: 18%;">Trainers</th>
+              <th style="width: 18%;">Children</th>
+              <th style="width: 18%;">Notes</th>
+              <th style="width: 18%;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr template repeat="{{training in trainings}}">
               <td>{{training.date}}</td>
               <td>
                 <template repeat="{{trainer in training.trainers}}">
@@ -43,19 +45,21 @@
                 <button class="red_button" on-click="{{showDeleteTraining}}" training-id="{{training.id}}">Delete</button>
               </td>    
             </tr>
-          </template>
+          </tbody>
         </table>
       </template>
       <template if="{{editable == false}}">
         <table>
-          <tr class="table_header">
-            <td style="width: 22%;">Date</td>
-            <td style="width: 22%;">Trainers</td>
-            <td style="width: 22%;">Children</td>
-            <td style="width: 22%;">Notes</td>
-          </tr>
-          <template repeat="{{training in trainings}}">
-            <tr>
+          <thead>
+            <tr class="table_header">
+              <th style="width: 22%;">Date</th>
+              <th style="width: 22%;">Trainers</th>
+              <th style="width: 22%;">Children</th>
+              <th style="width: 22%;">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr template repeat="{{training in trainings}}">
               <td>{{training.date}}</td>
               <td>
                 <template repeat="{{trainer in training.trainers}}">
@@ -69,11 +73,10 @@
               </td>
               <td>{{training.notes}}</td>
             </tr>
-          </template>
+          </tbody>   
         </table>
       </template>
    </template>
-   
   </div>
 </template>
 <script type="application/dart" src="list_trainings.dart"></script>
