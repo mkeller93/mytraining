@@ -1,8 +1,8 @@
 name: TrainingCoordinator
 author: Marcel Keller
-transformers:
-- polymer:
-    entry_points: web/index.html
 dependencies:
   json: any
   polymer: any
+transformers:
+- polymer:
+    entry_points: web/index.html
