@@ -36,6 +36,40 @@ class AddTrainingControl extends PolymerElement
     originalTraining = training;
   }
 
+  bool isTrainerSelected(Person p)
+  {
+    if (app.data.trainers == null)
+    {
+      return false;
+    }
+
+    if (training != null && training.trainers.contains(p) == true)
+      {
+        return true;
+      }
+    else
+      {
+        return false;
+      }
+  }
+
+  bool isChildSelected(Person p)
+  {
+    if (app.data.children == null)
+    {
+      return false;
+    }
+
+    if (training != null && training.children.contains(p) == true)
+    {
+      return true;
+    }
+    else
+    {
+     return false;
+    }
+  }
+
   void childSelected(Event event, var detail, var target)
   {
     CheckboxInputElement chb = target;

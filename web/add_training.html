@@ -16,7 +16,7 @@
           <td>Trainer</td>
           <td>
             <template repeat="{{trainer in app.data.trainers}}">
-              <label ><input type="checkbox" on-click="{{trainerSelected}}" trainer-id="{{trainer.id}}" checked="{{training.trainers.contains(trainer)}}">{{trainer}}</label> <br>
+              <label ><input type="checkbox" on-click="{{trainerSelected}}" trainer-id="{{trainer.id}}" unused="{{training}}" checked="{{isTrainerSelected(trainer)}}">{{trainer}}</label> <br>
             </template>
            </td>
         </tr>        
@@ -24,7 +24,7 @@
           <td>Children</td>          
           <td>
             <template repeat="{{child in app.data.children}}">
-              <label><input type="checkbox" on-click="{{childSelected}}" child-id="{{child.id}}" checked="{{training.children.contains(child)}}">{{child}}</label> <br>
+              <label><input type="checkbox" on-click="{{childSelected}}" child-id="{{child.id}}" unused="{{training}}" checked="{{isChildSelected(child)}}">{{child}}</label> <br>
             </template>
            </td>
         </tr>
