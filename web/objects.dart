@@ -23,9 +23,18 @@ class User extends Observable
 {
   @observable String id = "";
   @observable String username = "";
+  @observable String password = "";
   @observable String role = "";
-
-  User(this.id, this.username, this.role);
+  
+  User()
+  {
+  }
+  
+  String toJson()
+  {
+    String data = '{"username":"$username", "password":"$password", "role":"$role"}';
+    return data;
+  }
 }
 
 class Person extends Observable
@@ -39,7 +48,7 @@ class Person extends Observable
   @observable bool isTrainer = false;
 
   Person()
-  {;
+  {
   }
 
   String toString() => "$firstname $name";

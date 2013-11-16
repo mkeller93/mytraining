@@ -5,6 +5,7 @@ BSD-style license that can be found in the LICENSE file.
 -->
 <link rel="import" href="persons.html">
 <link rel="import" href="trainings.html">
+<link rel="import" href="users.html">
 <link rel="import" href="login.html">
 <polymer-element name="training-app">
 <template>
@@ -28,14 +29,17 @@ BSD-style license that can be found in the LICENSE file.
       <login-control></login-control>
     </template>
     <template if="{{app.currentUser != null}}">
+      <template if="{{app.content == 'home'}}">
+        <span class="title">Welcome to Training Coordinator</span>
+      </template>
       <template if="{{app.content == 'trainings'}}">
         <trainings-view></trainings-view>
       </template>
       <template if="{{app.content == 'persons'}}">
         <persons-view></persons-view>
       </template>
-      <template if="{{app.content == 'home'}}">
-        <span class="title">Welcome to Training Coordinator</span>
+      <template if="{{app.content == 'users'}}">
+        <users-view></users-view>
       </template>
     </template>
   </div>

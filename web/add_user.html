@@ -1,0 +1,43 @@
+<polymer-element name="add-user-control">
+<template>
+  <div id="main-content">
+    <div>
+    <template if="{{success != ''}}">
+      <span class="success">{{success}}</span>
+    </template>
+    <template if="{{success == ''}}">
+      <form id="new-user-form">
+       <table>
+        <tr>
+          <td>Username</td>
+          <td><input type="text" value="{{user.username}}"></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="text" value="{{user.password}}"></td>
+        </tr>
+        <tr>
+          <td>Role</td>
+          <td><input type="text" value="{{person.role}}"></td>
+        </tr>
+        <tr>
+         <td colspan="2" class="error">
+           <ul>
+             <template repeat="{{error in errors}}">
+               <li>Please enter a {{error}}</li>
+             </template>
+           </ul>
+         </td>
+        </tr>
+        <tr>
+         <td><button class="green_button" type="submit" on-click="{{save}}">Save</button></td>
+         <td><button class="red_button" type="submit" on-click="{{cancel}}">Cancel</button></td>
+        </tr>
+       </table>
+       </form>
+     </template>
+    </div>
+  </div>
+</template>
+<script type="application/dart" src="add_user.dart"></script>
+</polymer-element>

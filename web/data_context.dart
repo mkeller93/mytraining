@@ -31,6 +31,7 @@ class DataContext
 
   @observable ObservableList<Training> trainings;
 
+  @observable ObservableList<User> users;
   User user;
 
   List<PersonInTraining> personInTrainingList = new List<PersonInTraining>();
@@ -419,13 +420,77 @@ class DataContext
   }
 
   // ---------------------------------------------------------------------------------
+  // Users CRUD
+  
+  bool addUser(User u)
+  {
+    HttpRequest req = new HttpRequest();
+
+    req.open("POST", userUri, async: false);
+    setRequestHeader(req);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.send(u.toJson());
+
+    if (req.status == 201)
+    {
+      Map data = JSON.parse(req.responseText);
+      u.id = data['objectId'];
+
+      users.add(u);
+
+      return true;
+    }
+
+    return false;
+  }
+
+  bool updateUser(User u)
+  {
+    HttpRequest req = new HttpRequest();
+
+    String uri = userUri + "/" + u.id;
+
+    req.open("PUT", uri, async: false);
+    setRequestHeader(req);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.send(u.toJson());
+
+    if (req.status == 200)
+    {
+      return true;
+    }
+
+    return false;
+  }
+
+  bool deleteUser(User u)
+  {
+    HttpRequest req = new HttpRequest();
+
+    String uri = userUri + "/" + u.id;
+
+    req.open("DELETE", uri, async: false);
+    setRequestHeader(req);
+    req.send();
+
+    if (req.status == 200)
+    {
+      users.remove(u);
+
+      return true;
+    }
+
+    return false;
+  }
+  
+  // ---------------------------------------------------------------------------------
   // login
 
   bool login(String username, String password)
   {
     HttpRequest req = new HttpRequest();
 
-    var uri = userUri + "?" + 'where={"username":"$username", "password":"$password"}';
+    var uri = userUri;
 
     req.open("GET", uri, async: false);
     setRequestHeader(req);
@@ -438,13 +503,32 @@ class DataContext
       return false;
     }
 
-    var item = data['results'][0];
-    String un = item['username'];
-    String role = item['role'];
-    String id = item['objectId'];
+    users = new ObservableList<User>();
+    
+    for (Map item in data['results'])
+    {
+      String un = item['username'];
+      String role = item['role'];
+      String pw = item['password'];
+      String id = item['objectId'];
 
-    user = new User(id, un, role);
-
-    return true;
+      User u = new User();
+      u.id = id;
+      u.username = un;
+      u.password = pw;
+      u.role = role;
+      
+      users.add(u);
+    }
+    
+    var check_users = users.where((u) => u.username == username && u.password == password);
+    
+    if (check_users.length > 0)
+    {
+      user = check_users.first;
+      return true;
+    }
+    
+    return false;
   }
 }

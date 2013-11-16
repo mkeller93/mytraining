@@ -1,0 +1,64 @@
+<link rel="import" href="add_user.html">
+<polymer-element name="list-users-control">
+<template>
+  <div id="main-content">
+    <span class="success">{{success}}</span>
+    <span class="error">{{error}}</span>
+    <template if="{{action == 'delete'}}">
+      Really delete {{selectedUser.username}}?
+      <button class="red_button" on-click="{{deleteUser}}">Yes</button>
+      <button class="green_button" on-click="{{cancelDelete}}">No</button>
+    </template>
+   
+    <template if="{{action == 'edit'}}">
+      <add-user-control on-finish="{{editFinished}}" user="{{selectedUser}}"></add-user-control>
+    </template>
+   
+    <template if="{{action == 'list'}}">
+      <template if="{{editable == true}}">
+        <table>
+          <thead>
+            <tr class="table_header">
+              <th style="width: 20%;">Username</th>
+              <th style="width: 20%;">Password</th>
+              <th style="width: 20%;">Role</th>
+              <th style="width: 20%;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr template repeat="{{user in app.data.users}}">
+              <td>{{user.username}}</td>
+              <td>***</td>
+              <td>{{user.role}}</td>
+              <td>
+                <button class="orange_button" on-click="{{editUser}}" user-id="{{user.id}}">Edit</button>
+                <button class="red_button" on-click="{{showDeleteUser}}" user-id="{{user.id}}">Delete</button>
+              </td>    
+            </tr>
+          </tbody>
+        </table>
+      </template>
+      <template if="{{editable == false}}">
+        <table>
+          <thead>
+            <tr class="table_header">
+              <th style="width: 30%;">Username</th>
+              <th style="width: 30%;">Password</th>
+              <th style="width: 30%;">Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr template repeat="{{user in app.data.users}}">
+              <td>{{user.username}}</td>
+              <td>***</td>
+              <td>{{user.role}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </template>
+   </template>
+   
+  </div>
+</template>
+<script type="application/dart" src="list_persons.dart"></script>
+</polymer-element>
