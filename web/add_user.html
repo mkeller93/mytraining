@@ -18,7 +18,10 @@
         </tr>
         <tr>
           <td>Role</td>
-          <td><input type="text" value="{{person.role}}"></td>
+          <td>
+            <select selectedIndex="{{selectedRole}}">
+              <option template repeat="{{role in roles}}">{{role}}</option>
+            </select>
         </tr>
         <tr>
          <td colspan="2" class="error">

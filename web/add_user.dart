@@ -13,6 +13,10 @@ class AddUserControl extends PolymerElement
 
   @observable ObservableList<String> errors;
   @observable String success;
+  
+  @observable int selectedRole = 0;
+  
+  @observable ObservableList<String> roles;
 
   @published User user;
   User originalUser;
@@ -34,6 +38,11 @@ class AddUserControl extends PolymerElement
     success = "";
 
     originalUser = user;
+    
+    roles = new ObservableList<String>();
+    roles.add("admin");
+    roles.add("user");
+    roles.add("viewer");
   }
 
   void cancel(Event e)
@@ -56,6 +65,7 @@ class AddUserControl extends PolymerElement
 
     if (validateValues() == true)
     {
+      user.role = Role.values[selectedRole].name;
       _dispatchFinishEvent(this, false);
     }
   }
@@ -70,10 +80,6 @@ class AddUserControl extends PolymerElement
     if (user.password == "" || user.password == null)
     {
       errors.add("password");
-    }
-    if (user.role== "" || user.role == null)
-    {
-      errors.add("role");
     }
     return (errors.length == 0);
   }
