@@ -421,7 +421,7 @@ class DataContext
 
   // ---------------------------------------------------------------------------------
   // Users CRUD
-  
+
   bool addUser(User u)
   {
     HttpRequest req = new HttpRequest();
@@ -465,6 +465,12 @@ class DataContext
 
   bool deleteUser(User u)
   {
+    if (u.id == user.id)
+    {
+      // cannot delete current user
+      return false;
+    }
+
     HttpRequest req = new HttpRequest();
 
     String uri = userUri + "/" + u.id;
@@ -482,7 +488,7 @@ class DataContext
 
     return false;
   }
-  
+
   // ---------------------------------------------------------------------------------
   // login
 
@@ -504,7 +510,7 @@ class DataContext
     }
 
     users = new ObservableList<User>();
-    
+
     for (Map item in data['results'])
     {
       String un = item['username'];
@@ -517,18 +523,18 @@ class DataContext
       u.username = un;
       u.password = pw;
       u.role = role;
-      
+
       users.add(u);
     }
-    
+
     var check_users = users.where((u) => u.username == username && u.password == password);
-    
+
     if (check_users.length > 0)
     {
       user = check_users.first;
       return true;
     }
-    
+
     return false;
   }
 }
