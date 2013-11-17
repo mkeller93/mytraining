@@ -4,7 +4,7 @@ class TrainingConfig
 {
   static final String config =
       "[main]/" +
-      "admin=Home:#home;Persons:#persons;Trainings:#trainings;Users:#users/" +
+      "admin=Home:#home;Persons:#persons;Trainings:#trainings;Users:#users;Settings:#settings/" +
       "user=Home:#home;Persons:#persons;Trainings:#trainings/" +
       "viewer=Home:#home;Persons:#persons;Trainings:#trainings/" +
       "[persons]/" +
@@ -18,5 +18,9 @@ class TrainingConfig
       "[users]/" +
       "admin=List:list;Add User:add;Edit User:edit;/" +
       "user=/" +
-      "viewer=/";
+      "viewer=/" +
+      "[settings]/" +
+      "admin=Home:home;Change Password:changepw;/" +
+      "user=Home:home;Change Password:changepw;/" +
+      "viewer=Home:home;Change Password:changepw;/";
 }

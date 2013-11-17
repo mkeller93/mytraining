@@ -1,0 +1,28 @@
+<!--
+Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
+for details. All rights reserved. Use of this source code is governed by a
+BSD-style license that can be found in the LICENSE file.
+-->
+<link rel="import" href="change_password.html">
+<polymer-element name="settings-view">
+<template>
+  <div id="menu">
+   <template repeat="{{item in menuItems}}">
+    <button class="navigation" on-click="{{updateView}}" view="{{item.target}}">{{item.name}}</button>
+   </template>
+  </div>
+  <div id="main-content">
+    <span class="error">{{error}}</span>
+    <span class="success">{{success}}</span>
+    <template if="{{action == 'home'}}">
+      <h1>Settings</h1>
+      <span>Welcome to the Settings page. Here you can change your password.</span>
+    </template>
+    <template if="{{action == 'changepw'}}">
+      <h1>Change Password</h1>
+      <change-password-control on-finish="{{changeFinish}}"></change-password-control>
+    </template>
+  </div> 
+</template>
+<script type="application/dart" src="settings.dart"></script>
+</polymer-element>

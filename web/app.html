@@ -7,6 +7,7 @@ BSD-style license that can be found in the LICENSE file.
 <link rel="import" href="trainings.html">
 <link rel="import" href="users.html">
 <link rel="import" href="login.html">
+<link rel="import" href="settings.html">
 <polymer-element name="training-app">
 <template>
   <div id="header">
@@ -40,6 +41,9 @@ BSD-style license that can be found in the LICENSE file.
       </template>
       <template if="{{app.content == 'users'}}">
         <users-view></users-view>
+      </template>
+      <template if="{{app.content == 'settings'}}">
+        <settings-view></settings-view>
       </template>
     </template>
   </div>
