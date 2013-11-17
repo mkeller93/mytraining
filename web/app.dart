@@ -24,6 +24,16 @@ class TrainingApp extends PolymerElement
     app.logout();
   }
 
+  void loggedIn(CustomEvent event, bool canceled)
+  {
+    window.location.hash = "";
+  }
+
+  void changeLanguage(Event e, var detail, var target)
+  {
+    String language = target.attributes['language'];
+  }
+
   _location_changed(_)
   {
     if (window.location.hash != "")

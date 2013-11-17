@@ -1,26 +1,35 @@
 library training.web.login;
 
 import 'dart:html';
+import "dart:async";
 import 'package:polymer/polymer.dart';
 import '../model.dart';
 
 @CustomTag('login-control')
-class LoginControl extends PolymerElement 
+class LoginControl extends PolymerElement
 {
   @observable String username = "";
   @observable String password = "";
-  
+
   @observable String error;
-  
+
   AppModel app;
-  
+
   bool get applyAuthorStyles => true;
-  
-  LoginControl.created() : super.created() 
+
+  static const EventStreamProvider<CustomEvent> _FINISH_EVENT = const EventStreamProvider("finish");
+  Stream<CustomEvent> get onFinish => _FINISH_EVENT.forTarget(this);
+
+  static void _dispatchFinishEvent(Element element, bool canceled)
+  {
+    element.dispatchEvent(new CustomEvent("finish", detail: canceled));
+  }
+
+  LoginControl.created() : super.created()
   {
     app = appModel;
   }
-  
+
   void login(Event e, var target, var node)
   {
     bool logged_in = app.login(username, password);
@@ -28,6 +37,10 @@ class LoginControl extends PolymerElement
     if (logged_in == false)
     {
       error = "invalid username or password";
+    }
+    else
+    {
+      _dispatchFinishEvent(this, false);
     }
   }
 }

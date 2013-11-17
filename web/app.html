@@ -1,8 +1,3 @@
-<!--
-Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
-for details. All rights reserved. Use of this source code is governed by a
-BSD-style license that can be found in the LICENSE file.
--->
 <link rel="import" href="persons/persons.html">
 <link rel="import" href="trainings/trainings.html">
 <link rel="import" href="users/users.html">
@@ -11,7 +6,9 @@ BSD-style license that can be found in the LICENSE file.
 <polymer-element name="training-app">
 <template>
   <div id="header">
-    Training Coordinator
+    Training Planer
+    <!-- <button class="default_button" on-click="{{changeLanguage}}" language="de">DE</button>
+    <button class="default_button" on-click="{{changeLanguage}}" language="en">EN</button>-->
   </div>
   <div id="navigation">
     <template repeat="{{item in app.navigation}}">
@@ -27,11 +24,12 @@ BSD-style license that can be found in the LICENSE file.
   </div>  
   <div id="content">
     <template if="{{app.currentUser == null}}">
-      <login-control></login-control>
+      <login-control on-finish="{{loggedIn}}"></login-control>
     </template>
     <template if="{{app.currentUser != null}}">
       <template if="{{app.content == 'home'}}">
-        <span class="title">Welcome to Training Coordinator</span>
+        <span class="title">Welcome to Training Planer</span>
+        <span></span>
       </template>
       <template if="{{app.content == 'trainings'}}">
         <trainings-view></trainings-view>
