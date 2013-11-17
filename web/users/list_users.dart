@@ -2,9 +2,8 @@ library training.web.list_users;
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';
-import 'model.dart';
-import "data_context.dart";
-import 'objects.dart';
+import '../model.dart';
+import '../objects.dart';
 
 @CustomTag('list-users-control')
 class ListUsersControl extends PolymerElement

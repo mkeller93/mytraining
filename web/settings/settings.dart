@@ -2,7 +2,7 @@ library training.web.users;
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';
-import 'model.dart';
+import '../model.dart';
 
 @CustomTag('settings-view')
 class SettingsView extends PolymerElement

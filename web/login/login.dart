@@ -2,7 +2,7 @@ library training.web.login;
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';
-import 'model.dart';
+import '../model.dart';
 
 @CustomTag('login-control')
 class LoginControl extends PolymerElement 

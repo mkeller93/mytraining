@@ -5,9 +5,9 @@
 library training.web.model;
 
 import 'package:polymer/polymer.dart';
-import "training_config.dart";
-import "ini_parser.dart";
-import "data_context.dart";
+import "config/training_config.dart";
+import "data/ini_parser.dart";
+import "data/data_context.dart";
 import 'objects.dart';
 
 final appModel = new AppModel._();

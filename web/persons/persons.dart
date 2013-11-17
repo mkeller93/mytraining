@@ -1,16 +1,16 @@
-library training.web.users;
+library training.web.persons;
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';
-import 'model.dart';
-import 'objects.dart';
+import '../model.dart';
+import '../objects.dart';
 
-@CustomTag('users-view')
-class UsersView extends PolymerElement
+@CustomTag('persons-view')
+class PersonsView extends PolymerElement
 {
   @observable AppModel app;
   @observable String action;
-  @observable User newUser;
+  @observable Person newPerson;
 
   @observable String success;
   @observable String error;
@@ -19,12 +19,12 @@ class UsersView extends PolymerElement
 
   @observable ObservableList<NavigationItem> menuItems;
 
-  UsersView.created() : super.created()
+  PersonsView.created() : super.created()
   {
     app = appModel;
     action = "list";
     menuItems = new ObservableList<NavigationItem>();
-    menuItems = app.getNavigation("users");
+    menuItems = app.getNavigation("persons");
   }
 
   void updateView(Event event, var detail, var target)
@@ -33,7 +33,7 @@ class UsersView extends PolymerElement
 
     if (action == "add")
     {
-      newUser = new User();
+      newPerson = new Person();
     }
   }
 
@@ -42,17 +42,17 @@ class UsersView extends PolymerElement
     if(canceled == false)
     {
 
-      if (app.data.addUser(newUser) == true)
+      if (app.data.addPerson(newPerson) == true)
       {
-        success = "Successfully added $newUser";
+        success = "Successfully added $newPerson";
       }
       else
       {
-        error = "Failed to add user!";
+        error = "Failed to add person!";
       }
     }
 
     action = "list";
-    newUser = null;
+    newPerson = null;
   }
 }

@@ -3,8 +3,8 @@ library training.web.add_training;
 import 'dart:html';
 import "dart:async";
 import 'package:polymer/polymer.dart';
-import 'model.dart';
-import 'objects.dart';
+import '../model.dart';
+import '../objects.dart';
 
 @CustomTag('add-training-control')
 class AddTrainingControl extends PolymerElement

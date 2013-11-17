@@ -3,21 +3,23 @@ library training.web.add_user;
 import 'dart:html';
 import "dart:async";
 import 'package:polymer/polymer.dart';
-import 'model.dart';
-import 'objects.dart';
+import '../model.dart';
+import '../objects.dart';
 
-@CustomTag('change-password-control')
-class ChangePasswordControl extends PolymerElement
+@CustomTag('add-user-control')
+class AddUserControl extends PolymerElement
 {
   @observable AppModel app;
 
   @observable ObservableList<String> errors;
+  @observable String success;
+  
+  @observable int selectedRole = 0;
+  
+  @observable ObservableList<String> roles;
 
-  @observable String password;
-  @observable String passwordCurrent;
-  @observable String passwordRepeated;
-
-  bool get applyAuthorStyles => true;
+  @published User user;
+  User originalUser;
 
   static const EventStreamProvider<CustomEvent> _FINISH_EVENT = const EventStreamProvider("finish");
   Stream<CustomEvent> get onFinish => _FINISH_EVENT.forTarget(this);
@@ -27,15 +29,32 @@ class ChangePasswordControl extends PolymerElement
     element.dispatchEvent(new CustomEvent("finish", detail: canceled));
   }
 
-  ChangePasswordControl.created() : super.created()
+  bool get applyAuthorStyles => true;
+
+  AddUserControl.created() : super.created()
   {
     app = appModel;
     errors = new ObservableList<String>();
+    success = "";
+
+    originalUser = user;
+    
+    roles = new ObservableList<String>();
+    roles.add("admin");
+    roles.add("user");
+    roles.add("viewer");
   }
 
   void cancel(Event e)
   {
     e.preventDefault();
+
+    if(user != null && originalUser != null)
+    {
+      user.username = originalUser.username;
+      user.password = originalUser.password;
+      user.role = originalUser.role;
+    }
 
     _dispatchFinishEvent(this, true);
   }
@@ -46,7 +65,7 @@ class ChangePasswordControl extends PolymerElement
 
     if (validateValues() == true)
     {
-      app.data.user.password = password;
+      user.role = Role.values[selectedRole].name;
       _dispatchFinishEvent(this, false);
     }
   }
@@ -54,19 +73,14 @@ class ChangePasswordControl extends PolymerElement
   bool validateValues()
   {
     errors.clear();
-    if (passwordCurrent != app.data.user.password)
+    if (user.username == "" || user.username == null)
     {
-      errors.add("valid current password");
+      errors.add("username");
     }
-    if (password == "")
+    if (user.password == "" || user.password == null)
     {
       errors.add("password");
     }
-    else if (password != passwordRepeated)
-    {
-      errors.add("same password twice");
-    }
-
     return (errors.length == 0);
   }
 }

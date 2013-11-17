@@ -3,23 +3,21 @@ library training.web.add_user;
 import 'dart:html';
 import "dart:async";
 import 'package:polymer/polymer.dart';
-import 'model.dart';
-import 'objects.dart';
+import '../model.dart';
+import '../objects.dart';
 
-@CustomTag('add-user-control')
-class AddUserControl extends PolymerElement
+@CustomTag('change-password-control')
+class ChangePasswordControl extends PolymerElement
 {
   @observable AppModel app;
 
   @observable ObservableList<String> errors;
-  @observable String success;
-  
-  @observable int selectedRole = 0;
-  
-  @observable ObservableList<String> roles;
 
-  @published User user;
-  User originalUser;
+  @observable String password;
+  @observable String passwordCurrent;
+  @observable String passwordRepeated;
+
+  bool get applyAuthorStyles => true;
 
   static const EventStreamProvider<CustomEvent> _FINISH_EVENT = const EventStreamProvider("finish");
   Stream<CustomEvent> get onFinish => _FINISH_EVENT.forTarget(this);
@@ -29,32 +27,15 @@ class AddUserControl extends PolymerElement
     element.dispatchEvent(new CustomEvent("finish", detail: canceled));
   }
 
-  bool get applyAuthorStyles => true;
-
-  AddUserControl.created() : super.created()
+  ChangePasswordControl.created() : super.created()
   {
     app = appModel;
     errors = new ObservableList<String>();
-    success = "";
-
-    originalUser = user;
-    
-    roles = new ObservableList<String>();
-    roles.add("admin");
-    roles.add("user");
-    roles.add("viewer");
   }
 
   void cancel(Event e)
   {
     e.preventDefault();
-
-    if(user != null && originalUser != null)
-    {
-      user.username = originalUser.username;
-      user.password = originalUser.password;
-      user.role = originalUser.role;
-    }
 
     _dispatchFinishEvent(this, true);
   }
@@ -65,7 +46,7 @@ class AddUserControl extends PolymerElement
 
     if (validateValues() == true)
     {
-      user.role = Role.values[selectedRole].name;
+      app.data.user.password = password;
       _dispatchFinishEvent(this, false);
     }
   }
@@ -73,14 +54,19 @@ class AddUserControl extends PolymerElement
   bool validateValues()
   {
     errors.clear();
-    if (user.username == "" || user.username == null)
+    if (passwordCurrent != app.data.user.password)
     {
-      errors.add("username");
+      errors.add("valid current password");
     }
-    if (user.password == "" || user.password == null)
+    if (password == "")
     {
       errors.add("password");
     }
+    else if (password != passwordRepeated)
+    {
+      errors.add("same password twice");
+    }
+
     return (errors.length == 0);
   }
 }

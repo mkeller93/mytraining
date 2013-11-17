@@ -2,9 +2,8 @@ library training.web.list_persons;
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';
-import 'model.dart';
-import "data_context.dart";
-import 'objects.dart';
+import '../model.dart';
+import '../objects.dart';
 
 @CustomTag('list-trainings-control')
 class ListTrainingsControl extends PolymerElement

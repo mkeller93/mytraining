@@ -3,7 +3,7 @@ library training.web.db_context;
 import 'package:polymer/polymer.dart';
 import 'package:json/json.dart' as JSON;
 import 'dart:html';
-import 'objects.dart';
+import '../objects.dart';
 
 class PersonInTraining
 {
