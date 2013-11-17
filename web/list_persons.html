@@ -7,8 +7,12 @@ BSD-style license that can be found in the LICENSE file.
 <polymer-element name="list-persons-control">
 <template>
   <div id="main-content">
-    <span class="success">{{success}}</span>
-    <span class="error">{{error}}</span>
+    <template if="{{success != ''}}">
+      <span class="success">{{success}}</span><br><br>
+    </template>
+    <template if="{{error != ''}}">
+      <span class="error">{{error}}</span><br><br>
+    </template>
     <template if="{{action == 'delete'}}">
       Really delete {{selectedPerson.firstname}} {{selectedPerson.name}}?
       <button class="red_button" on-click="{{deletePerson}}">Yes</button>

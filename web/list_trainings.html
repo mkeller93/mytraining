@@ -2,8 +2,12 @@
 <polymer-element name="list-trainings-control">
 <template>
   <div id="main-content">
-    <span class="success">{{success}}</span>
-    <span class="error">{{error}}</span>
+    <template if="{{success != ''}}">
+      <span class="success">{{success}}</span><br><br>
+    </template>
+    <template if="{{error != ''}}">
+      <span class="error">{{error}}</span><br><br>
+    </template>
     <template if="{{action == 'delete'}}">
       Really delete training from {{selectedTraining.date}}?
       <button class="red_button" on-click="{{deleteTraining}}">Yes</button>

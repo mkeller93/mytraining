@@ -32,7 +32,7 @@ class DataContext
   @observable ObservableList<Training> trainings;
 
   @observable ObservableList<User> users;
-  User user;
+  @observable User user;
 
   List<PersonInTraining> personInTrainingList = new List<PersonInTraining>();
 

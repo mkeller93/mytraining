@@ -5,8 +5,8 @@ class TrainingConfig
   static final String config =
       "[main]/" +
       "admin=Home:#home;Persons:#persons;Trainings:#trainings;Users:#users;Settings:#settings/" +
-      "user=Home:#home;Persons:#persons;Trainings:#trainings/" +
-      "viewer=Home:#home;Persons:#persons;Trainings:#trainings/" +
+      "user=Home:#home;Persons:#persons;Trainings:#trainings;Settings:#settings/" +
+      "viewer=Home:#home;Persons:#persons;Trainings:#trainings;Settings:#settings/" +
       "[persons]/" +
       "admin=List:list;Add person:add;Edit person:edit;/" +
       "user=List:list;/" +
