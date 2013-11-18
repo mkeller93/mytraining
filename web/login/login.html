@@ -3,8 +3,8 @@
   <h1>Login</h1>
   <span class="error">{{error}}</span>
   <br>
-  <input type="text" value="{{username}}">
-  <input type="password" value="{{password}}">
+  <input type="text" value="{{username}}" on-keyup="{{keyPressed}}">
+  <input type="password" value="{{password}}" on-keyup="{{keyPressed}}">
   <button class="login" on-click="{{login}}">login</button>
 </template>
 <script type="application/dart" src="login.dart"></script>

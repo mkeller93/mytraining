@@ -30,6 +30,14 @@ class LoginControl extends PolymerElement
     app = appModel;
   }
 
+  void keyPressed(Event e, var target, var node)
+  {
+    if (e.keyCode == KeyCode.ENTER)
+    {
+      login(null, null, null);
+    }
+  }
+  
   void login(Event e, var target, var node)
   {
     bool logged_in = app.login(username, password);
