@@ -8,11 +8,12 @@ import 'model.dart';
 class TrainingApp extends PolymerElement
 {
   @observable AppModel app;
+  @observable bool loggedIn = false;
 
   bool get applyAuthorStyles => true;
 
   bool overNavigation = false;
-  
+
   TrainingApp.created() : super.created()
   {
     app = appModel;
@@ -22,15 +23,17 @@ class TrainingApp extends PolymerElement
 
   void logout(Event e, var detail, var target)
   {
+    loggedIn = false;
     window.location.hash = "";
     app.logout();
   }
 
-  void loggedIn(CustomEvent event, bool canceled)
+  void loginFinish(CustomEvent event, bool canceled)
   {
+    loggedIn = true;
     window.location.hash = "";
   }
-  
+
   void showItem(Event e, var detail, var target)
   {
     overNavigation = true;

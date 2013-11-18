@@ -22,7 +22,8 @@ class DataContext
   static const String baseUri = "https://api.parse.com/1/classes/";
 
   String personUri = DataContext.baseUri + "persons";
-  String userUri = DataContext.baseUri + "users";
+  String userUri = "https://api.parse.com/1/users";
+  String loginUri = "https://api.parse.com/1/login";
   String trainingUri = DataContext.baseUri + "trainings";
   String personInTraingUri = DataContext.baseUri + "person_in_training";
 
@@ -33,6 +34,8 @@ class DataContext
 
   @observable ObservableList<User> users;
   @observable User user;
+
+  String sessionToken = "";
 
   List<PersonInTraining> personInTrainingList = new List<PersonInTraining>();
 
@@ -80,7 +83,7 @@ class DataContext
     var list = personInTrainingList.where((pit) => pit.personId == p.id && pit.trainingId == t.id);
     return (list.length > 0);
   }
-  
+
   bool deletePersonInTrainings(Person p)
   {
     for (Training t in trainings)
@@ -90,7 +93,7 @@ class DataContext
         return false;
       }
     }
-    
+
     return true;
   }
 
@@ -111,7 +114,7 @@ class DataContext
       if (req.status == 200)
       {
         personInTrainingList.remove(pit);
-        
+
         if (p.isTrainer == true)
         {
           t.trainers.remove(p);
@@ -120,7 +123,7 @@ class DataContext
         {
           t.children.remove(p);
         }
-        
+
         return true;
       }
 
@@ -388,7 +391,7 @@ class DataContext
       {
         children.remove(p);
       }
-      
+
       if (deletePersonInTrainings(p) == false)
       {
         return false;
@@ -481,6 +484,7 @@ class DataContext
     req.open("PUT", uri, async: false);
     setRequestHeader(req);
     req.setRequestHeader("Content-Type", "application/json");
+    req.setRequestHeader("X-Parse-Session-Token", sessionToken);
     req.send(u.toJson());
 
     if (req.status == 200)
@@ -505,6 +509,7 @@ class DataContext
 
     req.open("DELETE", uri, async: false);
     setRequestHeader(req);
+    req.setRequestHeader("X-Parse-Session-Token", sessionToken);
     req.send();
 
     if (req.status == 200)
@@ -522,20 +527,31 @@ class DataContext
 
   bool login(String username, String password)
   {
+    HttpRequest reqLogin = new HttpRequest();
+
+    var uri = loginUri + "?username=$username&password=$password";
+
+    reqLogin.open("GET", uri, async: false);
+    setRequestHeader(reqLogin);
+
+    reqLogin.send();
+
+    if (reqLogin.status != 200)
+    {
+      return false;
+    }
+
+    Map loginData = JSON.parse(reqLogin.responseText);
+    sessionToken = loginData['sessionToken'];
+
     HttpRequest req = new HttpRequest();
 
-    var uri = userUri;
-
-    req.open("GET", uri, async: false);
+    req.open("GET", userUri, async: false);
     setRequestHeader(req);
 
     req.send();
 
     Map data = JSON.parse(req.responseText);
-    if (data['results'].length == 0)
-    {
-      return false;
-    }
 
     users = new ObservableList<User>();
 
@@ -543,23 +559,22 @@ class DataContext
     {
       String un = item['username'];
       String role = item['role'];
-      String pw = item['password'];
       String id = item['objectId'];
 
       User u = new User();
       u.id = id;
       u.username = un;
-      u.password = pw;
       u.role = role;
 
       users.add(u);
     }
 
-    var check_users = users.where((u) => u.username == username && u.password == password);
+    var check_users = users.where((u) => u.username == username);
 
     if (check_users.length > 0)
     {
       user = check_users.first;
+      user.password = password;
       return true;
     }
 

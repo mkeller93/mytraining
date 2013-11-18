@@ -14,19 +14,19 @@
     <template repeat="{{item in app.navigation}}">
       <button class="side-navigation" on-click="{{showItem}}" target-name="{{item.target}}">{{item.name}}</button><br>
     </template>
-    <template if="{{app.currentUser != null}}">
+    <template if="{{loggedIn == true}}">
       <br>
       <span>    
-        <span class="username">{{app.currentUser.username}}</span>
+        <span class="username">{{app.data.user.username}}</span>
         <button class="logout" on-click="{{logout}}">Logout</button>
       </span>
     </template>
   </div>  
   <div id="content">
-    <template if="{{app.currentUser == null}}">
-      <login-control on-finish="{{loggedIn}}"></login-control>
+    <template if="{{loggedIn == false}}">
+      <login-control on-finish="{{loginFinish}}"></login-control>
     </template>
-    <template if="{{app.currentUser != null}}">
+    <template if="{{loggedIn == true}}">
       <template if="{{app.content == 'home'}}">
         <span class="title">Welcome to Training Planer</span>
         <span></span>

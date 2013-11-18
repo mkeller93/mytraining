@@ -25,11 +25,13 @@ class User extends Observable
   @observable String username = "";
   @observable String password = "";
   @observable String role = "";
-  
+
   User()
   {
   }
-  
+
+  String toString() => username;
+
   String toJson()
   {
     String data = '{"username":"$username", "password":"$password", "role":"$role"}';

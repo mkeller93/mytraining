@@ -17,8 +17,6 @@ class AppModel extends Observable
 {
   @observable String content = "";
 
-  @observable User currentUser = null;
-
   ObservableList<Navigation> navigations = new ObservableList<Navigation>();
   @observable ObservableList<NavigationItem> navigation = new ObservableList<NavigationItem>();
 
@@ -45,14 +43,13 @@ class AppModel extends Observable
     data.loadPersons();
     data.loadTrainings();
 
-    currentUser = data.user;
     setNavigation();
     return true;
   }
 
   void logout()
   {
-    currentUser = null;
+    data.user = null;
     setNavigation();
   }
 
@@ -92,9 +89,9 @@ class AppModel extends Observable
 
   ObservableList<NavigationItem> getNavigation(String name)
   {
-    if(navigations != null && currentUser != null)
+    if(navigations != null && data.user != null)
     {
-      var all = navigations.where((n) => n.role.name == currentUser.role && n.name == name);
+      var all = navigations.where((n) => n.role.name == data.user.role && n.name == name);
       if (all.length > 0)
       {
         return all.first.items;
