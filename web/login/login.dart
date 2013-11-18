@@ -32,19 +32,31 @@ class LoginControl extends PolymerElement
 
   void keyPressed(Event e, var target, var node)
   {
+    if (username == "" || password == "")
+    {
+      error = "Please enter username and password!";
+      return;
+    }
+
     if (e.keyCode == KeyCode.ENTER)
     {
       login(null, null, null);
     }
   }
-  
+
   void login(Event e, var target, var node)
   {
+    if (username == "" || password == "")
+    {
+      error = "Please enter username and password!";
+      return;
+    }
+
     bool logged_in = app.login(username, password);
 
     if (logged_in == false)
     {
-      error = "invalid username or password";
+      error = "Invalid username or password";
     }
     else
     {
