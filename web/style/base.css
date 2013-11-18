@@ -55,7 +55,7 @@ body
   padding-bottom: 1%;
   background-color: #DCDECE;
   text-align: right;
-  padding-right: 2%;
+  padding-right: 0%;
 }
 
 #content
@@ -84,6 +84,19 @@ body
   background-color: #668CFE;
 }
 
+.side-navigation
+{
+  font-weight: bold;
+  border: none;
+  background-color: #EFF2DC;
+  padding: 5px;
+}
+
+.side-navigation:hover
+{
+  background-color: #DCDECE;
+}
+
 .navigation
 {
   font-weight: bold;
@@ -91,6 +104,7 @@ body
   background-color: #DCDECE;
   padding: 8px;
 }
+
 .navigation:hover
 {
   background-color: #CBCCC2;

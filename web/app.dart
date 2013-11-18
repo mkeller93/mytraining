@@ -11,6 +11,8 @@ class TrainingApp extends PolymerElement
 
   bool get applyAuthorStyles => true;
 
+  bool overNavigation = false;
+  
   TrainingApp.created() : super.created()
   {
     app = appModel;
@@ -28,6 +30,13 @@ class TrainingApp extends PolymerElement
   {
     window.location.hash = "";
   }
+  
+  void showItem(Event e, var detail, var target)
+  {
+    overNavigation = true;
+    String item = target.attributes['target-name'];
+    window.location.hash = item;
+  }
 
   void changeLanguage(Event e, var detail, var target)
   {
@@ -36,8 +45,9 @@ class TrainingApp extends PolymerElement
 
   _location_changed(_)
   {
-    if (window.location.hash != "")
+    if (window.location.hash != "" && overNavigation == true)
     {
+      overNavigation = false;
       String hash = window.location.hash;
       if (hash.startsWith("#") == true)
       {

@@ -12,7 +12,7 @@
   </div>
   <div id="navigation">
     <template repeat="{{item in app.navigation}}">
-      <a href="{{item.target}}">{{item.name}}</a><br>
+      <button class="side-navigation" on-click="{{showItem}}" target-name="{{item.target}}">{{item.name}}</button><br>
     </template>
     <template if="{{app.currentUser != null}}">
       <br>
