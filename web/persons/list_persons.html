@@ -14,7 +14,7 @@ BSD-style license that can be found in the LICENSE file.
       <span class="error">{{error}}</span><br><br>
     </template>
     <template if="{{action == 'delete'}}">
-      Really delete {{selectedPerson.firstname}} {{selectedPerson.name}}?
+      Really Delete {{selectedPerson.firstname}} {{selectedPerson.name}}?
       <button class="red_button" on-click="{{deletePerson}}">Yes</button>
       <button class="green_button" on-click="{{cancelDelete}}">No</button>
     </template>

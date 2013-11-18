@@ -8,12 +8,12 @@ class TrainingConfig
       "user=Home:#home;Persons:#persons;Trainings:#trainings;Settings:#settings;/" +
       "viewer=Home:#home;Persons:#persons;Trainings:#trainings;Settings:#settings;/" +
       "[persons]/" +
-      "admin=List:list;Add person:add;Edit person:edit;/" +
+      "admin=List:list;Add Person:add;Edit Person:edit;/" +
       "user=List:list;/" +
       "viewer=List:list/" +
       "[trainings]/" +
-      "admin=List:list;Add training:add;Edit Training:edit;/" +
-      "user=List:list;Add training:add/" +
+      "admin=List:list;Add Training:add;Edit Training:edit;/" +
+      "user=List:list;Add Training:add/" +
       "viewer=List:list/" +
       "[users]/" +
       "admin=List:list;Add User:add;Edit User:edit;/" +
