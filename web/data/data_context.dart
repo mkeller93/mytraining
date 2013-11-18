@@ -80,6 +80,19 @@ class DataContext
     var list = personInTrainingList.where((pit) => pit.personId == p.id && pit.trainingId == t.id);
     return (list.length > 0);
   }
+  
+  bool deletePersonInTrainings(Person p)
+  {
+    for (Training t in trainings)
+    {
+      if (deletePersonInTraining(p, t) == false)
+      {
+        return false;
+      }
+    }
+    
+    return true;
+  }
 
   bool deletePersonInTraining(Person p, Training t)
   {
@@ -98,6 +111,16 @@ class DataContext
       if (req.status == 200)
       {
         personInTrainingList.remove(pit);
+        
+        if (p.isTrainer == true)
+        {
+          t.trainers.remove(p);
+        }
+        else
+        {
+          t.children.remove(p);
+        }
+        
         return true;
       }
 
@@ -364,6 +387,11 @@ class DataContext
       else
       {
         children.remove(p);
+      }
+      
+      if (deletePersonInTrainings(p) == false)
+      {
+        return false;
       }
 
       return true;
