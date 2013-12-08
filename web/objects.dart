@@ -46,6 +46,9 @@ class Person extends Observable
   @observable String firstname = "";
   @observable String birthday = "";
   @observable String phoneNumber = "";
+  @observable String homeNumber = "";
+  @observable String address = "";
+  @observable String place = "";
   @observable String email = "";
   @observable bool isTrainer = false;
 
@@ -59,7 +62,7 @@ class Person extends Observable
   {
     String trainer = isTrainer ? "true" : "false";
 
-    String data = '{"name":"$name", "firstname":"$firstname", "email":"$email", "birthday":"$birthday", "phone":"$phoneNumber", "istrainer":$trainer}';
+    String data = '{"address":"$address", "place":"$place", "name":"$name", "firstname":"$firstname", "email":"$email", "birthday":"$birthday", "phone":"$phoneNumber", "homePhone":"$homeNumber", "istrainer":$trainer}';
     return data;
   }
 }

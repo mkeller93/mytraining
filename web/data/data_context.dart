@@ -437,6 +437,9 @@ class DataContext
       p.birthday = item['birthday'];
       p.email = item['email'];
       p.phoneNumber = item['phone'];
+      p.homeNumber = item['homePhone'];
+      p.address = item['address'];
+      p.place = item['place'];
       p.isTrainer = item['istrainer'];
 
       if (p.isTrainer == true)

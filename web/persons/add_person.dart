@@ -68,23 +68,35 @@ class AddPersonControl extends PolymerElement
     errors.clear();
     if (person.firstname == "" || person.firstname == null)
     {
-      errors.add("firstname");
+      errors.add("Firstname");
     }
     if (person.name == "" || person.name == null)
     {
-      errors.add("name");
+      errors.add("Name");
     }
     if (person.birthday == "" || person.birthday == null)
     {
-      errors.add("birthday");
+      errors.add("Birthday");
     }
     if (person.phoneNumber == "" || person.phoneNumber == null)
     {
       errors.add("Phone Number");
     }
+    if (person.homeNumber == "" || person.homeNumber == null)
+    {
+      errors.add("Home Number");
+    }
     if (person.email == "" || person.email == null)
     {
-      errors.add("email");
+      errors.add("Email");
+    }
+    if (person.address == "" || person.address == null)
+    {
+      errors.add("Address");
+    }
+    if (person.place == "" || person.place == null)
+    {
+      errors.add("Place");
     }
 
     return (errors.length == 0);

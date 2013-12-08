@@ -31,7 +31,9 @@ BSD-style license that can be found in the LICENSE file.
               <th style="width: 15%;">Name</th>
               <th style="width: 15%;">Birthday</th>
               <th style="width: 15%;">Phone Number</th>
+              <th style="width: 15%;">Home Number</th>
               <th style="width: 15%;">Email</th>
+              <th style="width: 15%;">Address</th>              
               <th style="width: 15%;">Action </th>
             </tr>
           </thead>
@@ -40,7 +42,9 @@ BSD-style license that can be found in the LICENSE file.
               <td>{{person.firstname}} {{person.name}}</td>
               <td>{{person.birthday}}</td>
               <td>{{person.phoneNumber}}</td>
+              <td>{{person.homeNumber}}</td>
               <td>{{person.email}}</td>
+              <td>{{person.address}}, {{person.place}}</td>
               <td>
                 <button class="orange_button" on-click="{{editPerson}}" person-id="{{person.id}}">Edit</button>
                 <button class="red_button" on-click="{{showDeletePerson}}" person-id="{{person.id}}">Delete</button>
@@ -56,7 +60,9 @@ BSD-style license that can be found in the LICENSE file.
               <th style="width: 18%;">Name</th>
               <th style="width: 18%;">Birthday</th>
               <th style="width: 18%;">Phone Number</th>
+              <th style="width: 18%;">Home Number</th>
               <th style="width: 18%;">Email</th>
+              <th style="width: 18%;">Address</th>
             </tr>
           </thead>
           <tbody>
@@ -64,7 +70,9 @@ BSD-style license that can be found in the LICENSE file.
               <td>{{person.firstname}} {{person.name}}</td>
               <td>{{person.birthday}}</td>
               <td>{{person.phoneNumber}}</td>
+              <td>{{person.homeNumber}}</td>
               <td>{{person.email}}</td>
+              <td>{{person.address}}, {{person.place}}</td>
             </tr>
           </tbody>
         </table>
