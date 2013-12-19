@@ -46,6 +46,12 @@ class DataContext
   // ---------------------------------------------------------------------------------
   // helper methods
 
+  void reloadAll()
+  {
+   this.loadPersons();
+   this.loadTrainings();
+  }
+
   void setRequestHeader(HttpRequest request)
   {
     request.setRequestHeader("X-Parse-Application-Id", appId);
@@ -487,7 +493,7 @@ class DataContext
     req.open("PUT", uri, async: false);
     setRequestHeader(req);
     req.setRequestHeader("Content-Type", "application/json");
-    req.setRequestHeader("X-Parse-Session-Token", sessionToken);
+    req.setRequestHeader("X-Parse-Session-Token", "$sessionToken");
     req.send(u.toJson());
 
     if (req.status == 200)

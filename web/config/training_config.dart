@@ -13,7 +13,7 @@ class TrainingConfig
       "viewer=List:list/" +
       "[trainings]/" +
       "admin=List:list;Add Training:add;Edit Training:edit;/" +
-      "user=List:list;Add Training:add/" +
+      "user=List:list;Add Training:add;Edit Training:edit;/" +
       "viewer=List:list/" +
       "[users]/" +
       "admin=List:list;Add User:add;Edit User:edit;/" +

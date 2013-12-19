@@ -26,6 +26,8 @@ class TrainingsView extends PolymerElement
     action = "list";
     menuItems = new ObservableList<NavigationItem>();
     menuItems = app.getNavigation("trainings");
+
+    app.data.reloadAll();
   }
 
   void updateView(Event event, var detail, var target)

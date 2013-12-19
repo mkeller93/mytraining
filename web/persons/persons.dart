@@ -25,6 +25,8 @@ class PersonsView extends PolymerElement
     action = "list";
     menuItems = new ObservableList<NavigationItem>();
     menuItems = app.getNavigation("persons");
+
+    app.data.loadPersons();
   }
 
   void updateView(Event event, var detail, var target)

@@ -13,9 +13,9 @@ class AddUserControl extends PolymerElement
 
   @observable ObservableList<String> errors;
   @observable String success;
-  
+
   @observable int selectedRole = 0;
-  
+
   @observable ObservableList<String> roles;
 
   @published User user;
@@ -38,7 +38,9 @@ class AddUserControl extends PolymerElement
     success = "";
 
     originalUser = user;
-    
+
+    selectedRole = 1;
+
     roles = new ObservableList<String>();
     roles.add("admin");
     roles.add("user");
